@@ -1,0 +1,20 @@
+{
+  "name": "las-tejas",
+  "scripts": {
+  },
+  "env": {
+    "APP_KEY": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/php"
+    }
+  ]
+}
