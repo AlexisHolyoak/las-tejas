@@ -53,5 +53,40 @@
   font-size: 15px;
   font-style: bold;
   font-family: roboto;
-  margin: 5px 15px;
+  margin: 5px 0;
+}
+.background-nav{
+  background-color: #1E5F81;
+}
+.link{
+  text-decoration: none;
+  color: #F6F6F6;
+  font-style: bold;
+}
+.link:hover{
+  text-decoration: none;
+  color: #FFFFFF;
+  font-style: bold;
+}
+.table-dark{
+  text-align: center;
+}
+.table-dark thead{
+  background-color: #272727;
+}
+.table-dark tbody{
+  background-color: #304E5C;
+}
+.table-dark th{
+  text-align: center;
+  color: #FEFFD6;
+  font-style: bold;
+  font-size: 15px;
+}
+.table-dark td{
+  color: #F2F2F2;
+  font-size: 14px;
+}
+.table-dark tbody>tr:hover{
+  background-color:#1D546D;
 }
