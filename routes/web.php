@@ -15,11 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('user/home', 'HomeController@index')->name('home');
 Route::get('/login/home', [
     'as'   => 'login.home',
     'uses' => 'HomeController@index'
 ]);
-Route::get('user/register', function () {
-    return view('auth.register');
-})->name('register');
+Route::get('user/register', ['as' => 'register', function () {
+  return view('auth.register');
+}]);
