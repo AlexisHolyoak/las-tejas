@@ -16,10 +16,12 @@ Route::get('/', function () {
 });
 Auth::routes();
 Route::get('user/home', 'HomeController@index')->name('home');
+
 Route::get('/login/home', [
     'as'   => 'login.home',
     'uses' => 'HomeController@index'
 ]);
-Route::get('user/register', ['as' => 'register', function () {
+
+Route::get('user/register', ['as' => 'user.register', function () {
   return view('auth.register');
 }]);
