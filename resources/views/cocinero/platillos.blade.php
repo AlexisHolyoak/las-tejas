@@ -32,8 +32,8 @@
 			            <strong>Precio: </strong>S/15.00<br>
 			        </address>
 			        <div class="c-box-footer">
-			            <a href="#" class="btn btn-info circle" data-toggle="modal" data-target="#mdl-edit-comida"><span class="fa fa-pencil"></span></a>
-			            <a href="#" class="btn btn-danger circle" data-toggle="modal" data-target="#mdl-del-comida"><span class="fa fa-trash"></span></a>
+			            <a href="#" class="btn btn-info circle" data-toggle="modal" data-target="#mdl-edit-comida"><span>Editar</span></a>
+			            <a href="#" class="btn btn-danger circle" data-toggle="modal" data-target="#mdl-del-comida"><span>Eliminar</span></a>
 			        </div>
 			    </div>
 			</div>
