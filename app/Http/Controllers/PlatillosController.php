@@ -13,7 +13,9 @@ class PlatillosController extends Controller
      */
     public function __construct()
     {
+      /*uncomment this when we have login workin :)
         $this->middleware('auth');
+      */
     }
 
     /**
