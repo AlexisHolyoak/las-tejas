@@ -15,5 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/mozo', function(){
-	return view('mozo');
+	return view('mozos.mozo');
 });
