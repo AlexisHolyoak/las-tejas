@@ -14,5 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::view('/cocinero', 'cocinero.platillos');
+
+Route::get('/cocinero', function () {
+    return view('cocinero.platillos');
+});
 Route::view('/cocinero/ordenes', 'cocinero.ordenes');
