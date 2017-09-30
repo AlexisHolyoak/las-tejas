@@ -4,7 +4,7 @@ namespace lastejas\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CocineroController extends Controller
+class CocinerosController extends Controller
 {
     //
   public function platillos()
