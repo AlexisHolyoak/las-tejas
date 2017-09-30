@@ -4,7 +4,7 @@ namespace lastejas\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class LoginController extends Controller
+class HomeController extends Controller
 {
     /**
      * Create a new controller instance.
