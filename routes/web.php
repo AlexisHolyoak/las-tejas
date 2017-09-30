@@ -19,3 +19,6 @@ Route::get('/cocinero', function () {
     return view('cocinero.platillos');
 })->name('cocinero');
 Route::view('/cocinero/ordenes', 'cocinero.ordenes')->name('platillos');
+Route::get('/cocinero/orden', [
+    'as'   => 'cocinero.ordenes',
+]);
