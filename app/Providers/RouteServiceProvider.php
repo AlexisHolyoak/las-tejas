@@ -15,7 +15,6 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     protected $namespace = 'lastejas\Http\Controllers';
-
     /**
      * Define your route model bindings, pattern filters, etc.
      *
