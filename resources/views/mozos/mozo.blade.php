@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Mozo</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<link rel="stylesheet" href="C:\GitHub\las-tejas\public\css\app.css">
+	<link rel="stylesheet" href="{{asset('css/app.css')}}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -86,6 +86,6 @@
        </tbody>
      </table>
   </div> 
-  <script type="text/javascript" src="C:\GitHub\las-tejas\public\js\joel-mozo.js"></script>
+  <script type="text/javascript" src="{{asset('js\joel-mozo.js')}}"></script>
 </body>
 </html>
