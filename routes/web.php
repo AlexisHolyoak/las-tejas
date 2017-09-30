@@ -20,6 +20,6 @@ Route::get('/login/home', [
     'as'   => 'login.home',
     'uses' => 'HomeController@index'
 ]);
-Route::get('user/profile', function () {
+Route::get('user/register', function () {
     return view('auth.register');
-})->name('profile');
+})->name('register');
