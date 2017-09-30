@@ -73,9 +73,8 @@
 
         @yield('content')
 
-        <footer class="footer">
- 	      <div class="container"> 	      	
- 	      </div>
+        <footer class="navbar-footer">
+          <a href="#" class="navbar-brand link">Restaurante las tejas</a> 	      
  	    </footer>
 
     </div>
