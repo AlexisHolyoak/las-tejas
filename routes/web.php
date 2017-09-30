@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/usuarios/login', 'LoginController@index')->name('login');
+Route::get('/usuarios/login',[
+  'as' => 'login',
+  'users' => 'LoginController@index'
+]);
