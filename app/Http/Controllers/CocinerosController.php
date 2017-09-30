@@ -11,4 +11,8 @@ class CocinerosController extends Controller
   {
       return view('cocinero.platillos');
   }
+  public function ordenes()
+  {
+      return view('cocinero.ordenes');
+  }
 }

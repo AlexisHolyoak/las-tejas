@@ -17,3 +17,4 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/platillos','CocinerosController@platillos')->name('platillos');
+Route::get('/ordenes','CocinerosController@ordenes')->name('platillos');
