@@ -20,3 +20,7 @@ Route::get('/login/home', [
     'as'   => 'login.home',
     'uses' => 'HomeController@index'
 ]);
+Route::get('/login/register', [
+    'as'   => 'login.register',
+    'uses' => function(){return view('auth.register')};
+]);
