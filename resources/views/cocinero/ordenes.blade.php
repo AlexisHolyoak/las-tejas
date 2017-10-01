@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+    <div class="row">
     <ol class="breadcrumb">
 		  <li><a href="{{url('cocinero')}}">Cocinero</a></li>
 		  <li class="active">Ordenes</li>
@@ -80,5 +81,6 @@
 				</table>
 			</div>
 		</div>
+  </div>
 </div>
 @endsection
