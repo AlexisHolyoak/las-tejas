@@ -15,7 +15,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -73,7 +73,7 @@
 
         @yield('content')
 
-        <footer class="footer-page">
+        <footer class="footer-page" style="margin-top:5px;">
          <div class="navbar navbar-default navbar-fixed-bottom">
             <div class="container">
                 <p class="navbar-text pull-left">© 2017 - Universidad Nacional Jose Faustino Sanchez Carrion -  </p>
