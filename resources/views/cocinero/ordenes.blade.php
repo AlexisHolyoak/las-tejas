@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row">
         <ol class="breadcrumb">
-    		  <li><a href="{{ route('/platillos/') }}">Cocinero</a></li>
+    		  <li><a href="{{ url('/platillos/') }}">Cocinero</a></li>
     		  <li class="active">Ordenes</li>
     		</ol>
     		<h1 align="center" style="margin: 15px 15px;">Ordenes de Pedidos</h1>

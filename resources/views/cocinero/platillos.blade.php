@@ -6,7 +6,7 @@
   <div class="row">
     <ol class="breadcrumb">
 		  <li class="active">Cocinero</li>
-		  <li><a href="{{ route('/cocineros/') }}">Ordenes</a></li>
+		  <li><a href="{{ url('/ordenes/') }}">Ordenes</a></li>
 		</ol>
 		<h1 align="center" style="margin: 15px 15px;">Platillos del día</h1>
 		<div class="row center-row">
