@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-
-<ol class="breadcrumb">
+<div class="container">
+    <ol class="breadcrumb">
 		  <li><a href="{{url('cocinero')}}">Cocinero</a></li>
 		  <li class="active">Ordenes</li>
 		</ol>
@@ -80,5 +80,5 @@
 				</table>
 			</div>
 		</div>
-
+</div>
 @endsection

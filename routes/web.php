@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/platillos','CocinerosController@platillos')->name('platillos');
+Route::get('/ordenes','CocinerosController@ordenes')->name('ordenes');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/platillos','CocinerosController@platillos')->name('platillos');
-Route::get('/ordenes','CocinerosController@ordenes')->name('platillos');
