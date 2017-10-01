@@ -13,8 +13,7 @@
     # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteBase /laravel/public
-    RewriteRule ^ index.php [L]
+    
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
