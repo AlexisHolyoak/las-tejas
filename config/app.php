@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://las-tejas-pr-6.herokuapp.com'),
 
     /*
     |--------------------------------------------------------------------------
