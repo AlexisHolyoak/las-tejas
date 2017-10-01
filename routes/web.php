@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/clientes/platillos', function () {
+    return view('clientes.platillos');
 });
