@@ -20,7 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('register/',function(){
   return view('auth.register');
-})->name('register');
+})
 Route::get('register',function(){
   return redirect::to('register/')
 });
