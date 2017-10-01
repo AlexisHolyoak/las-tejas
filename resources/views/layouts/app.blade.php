@@ -74,12 +74,12 @@
         @yield('content')
 
         <footer class="footer-page">
-+          <div class="navbar navbar-default navbar-fixed-bottom">
-+            <div class="container">
-+                <p class="navbar-text pull-left">© 2017 - Universidad Nacional Jose Faustino Sanchez Carrion -  </p>
-+            </div>
-+          </div>
-+ 	    </footer>
+         <div class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container">
+                <p class="navbar-text pull-left">© 2017 - Universidad Nacional Jose Faustino Sanchez Carrion -  </p>
+            </div>
+          </div>
+ 	       </footer>
     </div>
 
     <!-- Scripts -->
