@@ -22,3 +22,6 @@ Route::get('/ordenes/',function(){
 Route::get('/platillos/',function(){
   return view('cocinero.platillos');
 });
+Route::get('/mozo/',function(){
+  return view('mozo.mesas');
+});
