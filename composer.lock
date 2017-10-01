@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1b23404e4479782c432aa8b6d22c3876",
+    "content-hash": "9375e0fb70625ba4ecb2cfbb3164c58e",
     "packages": [
         {
             "name": "csanquer/pdo-service-provider",
@@ -366,6 +366,59 @@
                 "trusted proxy"
             ],
             "time": "2017-06-15T17:19:42+00:00"
+        },
+        {
+            "name": "fsasvari/laravel-trailing-slash",
+            "version": "v0.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fsasvari/laravel-trailing-slash.git",
+                "reference": "ead42d358b04ce8648034aaa2d8bc3be04d33158"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fsasvari/laravel-trailing-slash/zipball/ead42d358b04ce8648034aaa2d8bc3be04d33158",
+                "reference": "ead42d358b04ce8648034aaa2d8bc3be04d33158",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/routing": "5.*"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "~5.7"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelTrailingSlash\\RoutingServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelTrailingSlash\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frano Sasvari",
+                    "email": "sasvari.frano@gmail.com"
+                }
+            ],
+            "description": "Adds redirection with trailing slash in Laravel.",
+            "homepage": "https://github.com/fsasvari/laravel-trailing-slash",
+            "keywords": [
+                "laravel",
+                "php",
+                "redirect"
+            ],
+            "time": "2017-07-28T09:42:22+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",

@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://las-tejas-pr-6.herokuapp.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -176,6 +176,7 @@ return [
         // lastejas\Providers\BroadcastServiceProvider::class,
         lastejas\Providers\EventServiceProvider::class,
         lastejas\Providers\RouteServiceProvider::class,
+        LaravelTrailingSlash\RoutingServiceProvider::class,
 
     ],
 
