@@ -23,6 +23,6 @@ class PlatillosController extends Controller
      */
     public function index()
     {
-        return view('cocinero.platillos');
+        return redirect('cocinero.platillos');
     }
 }
