@@ -1,0 +1,133 @@
+.list_container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list_header {
+    display: none;
+}
+
+.item {
+    border: 1px solid;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+    min-width: 220px;
+}
+
+.item .column{
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+.item .action {
+    margin-top: 10px;
+    justify-content: flex-end;
+}
+
+.item .action a{
+    padding: 10px;
+    background-color: #af4646;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.item .action a:nth-child(2) {
+    margin-left: 10px;
+}
+
+.item .table_number span{
+    border-radius: 50%;
+    background-color: #425084;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+@media screen and (min-width: 480px) {
+
+    .item {
+        min-width: 160px;
+        margin-left: 15px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .item {
+        border: none;
+        border-radius: 0;
+        margin: 0;
+        border-bottom: 1px solid;
+    }
+
+    .list_header, .list_container {
+        display: block;
+    }
+
+    .list_header, .item{
+        padding: 10px 0;
+    }
+
+    .list_header {
+        background-color: #382e2e;
+        color: #fff;
+        border-radius: 10px;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+    }
+    .row .column {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .row .table_number, .row .amount {
+        min-width: 100px;
+    }
+
+    .row .action {
+        min-width: 200px;
+    }
+
+    .item .amount span:nth-child(1) {
+        display: none;
+    }
+
+    .item .action {
+        margin: 0;
+    }
+
+    .list_container {
+        max-width: 550px;
+        margin: 0 auto;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    .list_container {
+        max-width: 900px;
+    }
+
+    .row .amount {
+        min-width: 300px;
+    }
+}
+
+@media screen and (min-width: 1360px) {
+    .list_container {
+        max-width: 1100px;
+    }
+
+    .row .amount {
+        min-width: 500px;
+    }
+}
