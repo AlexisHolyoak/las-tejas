@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-lg-1 col-offset-6 centered">
+        <div class="center-form">
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
 

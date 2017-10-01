@@ -93,3 +93,8 @@
 .table-dark tbody>tr:hover{
   background-color:#1D546D;
 }
+.center-form{
+    position: absolute;
+    width: 100%;
+    top: 45%;
+}
