@@ -14,7 +14,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!---Scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script type="text/javascript" src="{{asset('js\javascript.js')}}"></script>
 </head>
 <body>
     <div id="app">
@@ -87,5 +86,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+     <script type="text/javascript" src="{{asset('js\javascript.js')}}"></script>
 </body>
 </html>
