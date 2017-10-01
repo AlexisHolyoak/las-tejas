@@ -176,6 +176,7 @@ return [
         // lastejas\Providers\BroadcastServiceProvider::class,
         lastejas\Providers\EventServiceProvider::class,
         lastejas\Providers\RouteServiceProvider::class,
+        LaravelTrailingSlash\RoutingServiceProvider::class,
 
     ],
 
