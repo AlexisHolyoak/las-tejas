@@ -2,8 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="center-form">
+    <div class="center-form">
             <div class="form-group">
                 <div class="panel-heading">Dashboard</div>
 
@@ -17,7 +16,6 @@
                     You are logged in!
                 </div>
             </div>
-        </div>
     </div>
 </div>
 @endsection
