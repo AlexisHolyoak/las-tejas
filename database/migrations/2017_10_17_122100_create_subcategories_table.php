@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDishesTable extends Migration
+class CreateSubcategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateDishesTable extends Migration
      */
     public function up()
     {
-        Schema::create('Dishes', function (Blueprint $table) {
-          $table->increments('idDish');
-          $table->string('nameDish',30);
-            $table->foreign('idSubcategory')->references('idSubcategory')->on('Subcategories')->onDelete('cascade');
+        Schema::create('Subcategories', function (Blueprint $table) {
+          $table->increments('idSubcategory');
+          $table->string('nameSubcategory',45);
+          $table->string('observationSubcategory',45);
+          
           $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateDishesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Dishes');
+        Schema::dropIfExists('Subcategories');
     }
 }
