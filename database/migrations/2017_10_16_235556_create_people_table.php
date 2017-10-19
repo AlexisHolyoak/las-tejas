@@ -13,7 +13,7 @@ class CreatePeopleTable extends Migration
      */
     public function up()
     {
-        Schema::create('people', function (Blueprint $table) {
+        Schema::create('People', function (Blueprint $table) {
             $table->increments('idPerson');
             $table->string('personName',100);
             $table->string('address');
