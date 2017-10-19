@@ -18,6 +18,7 @@ class CreateLoginsTable extends Migration
             $table->string('user');
             $table->string('password');
             $table->integer('roles_idRoles');
+            $table->foreign('roles_idRoles')->references('idRoles')->on('Roles');
             $table->timestamps();
         });
     }
