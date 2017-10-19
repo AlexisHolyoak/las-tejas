@@ -18,6 +18,8 @@ class CreateDeliveriesTable extends Migration
             $table->date('estimatedTime');
             $table->integer('idPerson');
             $table->integer('idVoucher');
+            $table->foreign('idPerson')->references('idPerson')->on('Perons');
+            $table->foreign('idVoucher')->references('idVoucher')->on('Vouchers');
             $table->timestamps();
         });
     }
