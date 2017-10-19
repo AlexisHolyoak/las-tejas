@@ -27,6 +27,7 @@ class CreatePeopleTable extends Migration
             $table->integer('branch_idBranch')->unsigned();
             $table->integer('login_idLogin')->unsigned();
             $table->foreign('branch_idBranch')->references('idBranch')->on('Branches');
+            $table->foreign('login_idLogin')->references('idLogin')->on('Logins');
             $table->timestamps();
         });
     }
