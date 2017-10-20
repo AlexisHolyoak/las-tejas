@@ -3,8 +3,10 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
-class CreateOrderdetailsTable extends Migration
+/*
+modified by: Alexis Holyoak 19/10/17
+*/
+class CreateOrderDishesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +15,13 @@ class CreateOrderdetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('OrderDetails', function (Blueprint $table) {
-            $table->increments('idOrderDetail');
+        Schema::create('OrderDishes', function (Blueprint $table) {
+            $table->increments('idOrderDish');
             $table->integer('idDish')->unsigned();
-            $table->foreign('idDish')->references("idDish")->on('Dishes')->onDelete('cascade');
-            $table->integer('numberDishes',11);
-            $table->float('amount');
             $table->integer('idOrder')->unsigned();
-            $table->foreign('idOrder')->references("idOrder")->on('Orders')->onDelete('cascade');
+            $table->string('statusOrderDish');
+            $table->foreign('idDish')->references("idDish")->on('Dishes');
+            $table->foreign('idOrder')->references("idOrder")->on('Orders');
             $table->timestamps();
         });
     }
@@ -32,6 +33,6 @@ class CreateOrderdetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('OrderDetails');
+        Schema::dropIfExists('OrderDishes');
     }
 }

@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+/*
+modified by: Alexis Holyoak 19/10/17
+*/
 class CreateRequestsTable extends Migration
 {
     /**
@@ -13,12 +15,15 @@ class CreateRequestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('requests', function (Blueprint $table) {
-            $table->increments('idRequests');
-            $table->integer('idTables')->unsigned();
-            $table->integer('idOrders')->unsigned();
-            $table->foreign('idTables')->references('idTables')->on('Tables')->onDelete('cascade');
-            $table->foreign('idOrders')->references('idOrders')->on('Orders')->onDelete('cascade');
+        Schema::create('Requests', function (Blueprint $table) {
+            $table->increments('idRequest');
+            $table->integer('idTable')->unsigned();
+            $table->integer('idUser')->unsigned();
+            $table->datetime('timeRequest');
+            $table->string('statusRequest');
+            $table->string('statusOfAttentionRequest');
+            $table->foreign('idTable')->references('idTable')->on('Tables');
+            $table->foreign('idUser')->references('idUser')->on('Users');
             $table->timestamps();
         });
     }
@@ -30,6 +35,6 @@ class CreateRequestsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('requests');
+        Schema::dropIfExists('Requests');
     }
 }

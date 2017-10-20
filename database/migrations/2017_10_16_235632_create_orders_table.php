@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+/*
+modified by: Alexis Holyoak 19/10/17
+*/
 class CreateOrdersTable extends Migration
 {
     /**
@@ -13,11 +15,12 @@ class CreateOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
-            $table->increments('idOrders');
-            $table->date('OrderDate');
-            $table->integer('idOrderTypes')->unsigned();
-            $table->foreign('idOrderTypes')->references('idOrderTypes')->on('OrderTypes')->onDelete('cascade');
+        Schema::create('Orders', function (Blueprint $table) {
+            $table->increments('idOrder');
+            $table->integer('statusOrder')
+            $table->dateTime('timeOrder');
+            $table->dateTime('updateTimeOrder');
+            $table->string('statusOfPreparationOrder');
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('Orders');
     }
 }
