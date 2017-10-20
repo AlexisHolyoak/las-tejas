@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+/*
+modified by: Alexis Holyoak 19/10/17
+*/
 class CreateBranchesTable extends Migration
 {
     /**
@@ -15,8 +17,14 @@ class CreateBranchesTable extends Migration
     {
         Schema::create('Branches', function (Blueprint $table) {
             $table->increments('idBranch');
-            $table->string('address');
-            $table->string('observation');
+            $table->string('nameBranch');
+            $table->string('kindOfBussinessBranch')->nullable();
+            $table->string('rucBranch');
+            $table->date('addressBranch');
+            $table->date('registrationDateBranch');
+            $table->date('updateDateBranch');
+            $table->binary('logoBranch')->nullable();
+            $table->string('kindOfExchangeBranch');
             $table->timestamps();
         });
     }

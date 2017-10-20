@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+/*
+modified by: Alexis Holyoak 19/10/17
+*/
 class CreateRolesTable extends Migration
 {
     /**
@@ -14,8 +16,12 @@ class CreateRolesTable extends Migration
     public function up()
     {
         Schema::create('Roles', function (Blueprint $table) {
-            $table->increments('idRoles');
-            $table->string('name');
+            $table->increments('idRole');
+            $table->string('nameRole');
+            $table->date('registrationDateRole');
+            $table->integer('statusRole')->unsigned();
+            $table->double('salaryRole');
+            $table->date('updateDateRole');
             $table->timestamps();
         });
     }

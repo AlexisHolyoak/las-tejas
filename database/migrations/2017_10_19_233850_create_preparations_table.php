@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateClassesTable extends Migration
+class CreatePreparationsTables extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateClassesTable extends Migration
      */
     public function up()
     {
-        Schema::create('Classes', function (Blueprint $table) {
-            $table->increments('idClass');
-            $table->string('nameClass',30);
-            $table->foreign('idDish')->references('idDish')->on('MenuDishes')->onDelete('cascade');
+        Schema::create('Preparations', function (Blueprint $table) {
+            $table->increments('idPreparation');
+            $table->double('estimatedTimePreparation');
+            $table->integer('idSupply')->unsigned();
+            $table->foreign('idSupply')->references('idSupply')->on('Supply');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateClassesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Classes');
+        Schema::dropIfExists('Preparations');
     }
 }
