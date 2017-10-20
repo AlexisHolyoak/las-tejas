@@ -17,7 +17,7 @@ class CreatePreparationsTable extends Migration
             $table->increments('idPreparation');
             $table->double('estimatedTimePreparation');
             $table->integer('idSupply')->unsigned();
-            $table->foreign('idSupply')->references('idSupply')->on('Supply');
+            $table->foreign('idSupply')->references('idSupply')->on('Supplies');
             $table->timestamps();
         });
     }
