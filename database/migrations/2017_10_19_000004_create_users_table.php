@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
         Schema::create('Users', function (Blueprint $table) {
             $table->increments('idUser');
             $table->string('nameUser');
-            $table->string('firtSurNameUser');
+            $table->string('firstSurNameUser');
             $table->string('secondSurNameUser');
             $table->string('genderUser');
             $table->string('dniUser');
@@ -30,9 +30,8 @@ class CreateUsersTable extends Migration
             $table->string('birthdayUser')->nullable();
             $table->string('registrationDateUser');
             $table->string('statusUser');
-            $table->string('updateDateUser');
-            $table->string('nickNameUser');
-            $table->string('passwordUser');
+            $table->string('nickNameUser')->nullable();
+            $table->string('passwordUser')->nullable();
             $table->integer('idDistrict')->unsigned();
             $table->foreign('idDistrict')->references('idDistrict')->on('Districts');
             $table->rememberToken();

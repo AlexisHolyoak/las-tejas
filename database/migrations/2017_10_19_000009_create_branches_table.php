@@ -20,9 +20,7 @@ class CreateBranchesTable extends Migration
             $table->string('nameBranch');
             $table->string('kindOfBussinessBranch')->nullable();
             $table->string('rucBranch');
-            $table->date('addressBranch');
-            $table->date('registrationDateBranch');
-            $table->date('updateDateBranch');
+            $table->date('addressBranch');                        
             $table->binary('logoBranch')->nullable();
             $table->string('kindOfExchangeBranch');
             $table->timestamps();
