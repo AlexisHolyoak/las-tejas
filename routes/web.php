@@ -25,3 +25,4 @@ Route::get('/platillos/',function(){
 Route::get('/mozo/',function(){
   return view('mozo.mesas');
 });
+Route::resource('/table/','TableController');
