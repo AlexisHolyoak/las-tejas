@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/clientes/platillos', function () {
+    return view('clientes.platillos');
 });
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
