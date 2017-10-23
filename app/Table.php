@@ -9,7 +9,7 @@ Developed by: Alexis Peralta Holyoak 22/10/2017
 class Table extends Model
 {
     //
-    protected $table='Table';
+    protected $table='Tables';
     protected $primaryKey='idTable';
     public $timestamps = true;
 
@@ -19,6 +19,6 @@ class Table extends Model
       'statusTable',
       'statusOfAttentionTable',
       'idBranch',
-      'idUser'      
-    ]
+      'idUser',
+    ];
 }

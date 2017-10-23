@@ -19,9 +19,7 @@ class CreateUserRolesTable extends Migration
             $table->increments('idUserRole');
             $table->integer('idUser')->unsigned();
             $table->integer('idRole')->unsigned();
-            $table->integer('idBranch')->unsigned();
-            $table->date('registrationDateUserRole');
-            $table->date('updateDateUserRole');
+            $table->integer('idBranch')->unsigned();          
             $table->integer('statusUserRole')->unsigned();
             $table->foreign('idUser')->references('idUser')->on('Users');
             $table->foreign('idRole')->references('idRole')->on('Roles');

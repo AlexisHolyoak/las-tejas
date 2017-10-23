@@ -25,4 +25,13 @@ Route::get('/platillos/',function(){
 Route::get('/mozo/',function(){
   return view('mozo.mesas');
 });
-Route::resource('/table/','TableController');
+Route::resource('table','TableController');
+Route::get('/ajax-users/{id}',function($id){
+  $userroles=DB::table('Users as u')
+  ->join('UserRoles as ur','u.idUser','ur.idUser')
+  ->select('u.idUser as ID','u.nameUser as USER','u.firstSurNameUser as FIRST','u.secondSurNameUser as SECOND')
+  ->where('ur.idRole','=','2')
+  ->where('ur.idBranch',$id)
+  ->get();
+  return Response::json($userroles);
+});
