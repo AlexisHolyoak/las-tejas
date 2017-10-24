@@ -14,7 +14,7 @@ class CreateSubTypesTable extends Migration
     public function up()
     {
         Schema::create('SubTypes', function (Blueprint $table) {
-            $table->increments('idSubType');
+            $table->increments('id');
             $table->string('nameSubType',45);
             $table->integer('statusSubType');
             $table->timestamps();

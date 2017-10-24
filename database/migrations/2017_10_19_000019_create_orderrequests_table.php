@@ -14,10 +14,12 @@ class CreateOrderRequestsTable extends Migration
     public function up()
     {
         Schema::create('OrderRequests', function (Blueprint $table) {
-            $table->increments('idOrderRequest');
-            $table->integer('idOrder');
-            $table->integer('idRequest');
+            $table->increments('id');
+            $table->integer('order_id')->unsigned();
+            $table->integer('request_id')->unsigned();
             $table->string('statusOrderRequest');
+            $table->foreign('order_id')->references("id")->on('Orders');
+            $table->foreign('request_id')->references("id")->on('Requests');
             $table->timestamps();
         });
     }
