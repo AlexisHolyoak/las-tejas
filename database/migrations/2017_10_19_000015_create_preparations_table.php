@@ -14,10 +14,10 @@ class CreatePreparationsTable extends Migration
     public function up()
     {
         Schema::create('Preparations', function (Blueprint $table) {
-            $table->increments('idPreparation');
+            $table->increments('id');
             $table->double('estimatedTimePreparation');
-            $table->integer('idSupply')->unsigned();
-            $table->foreign('idSupply')->references('idSupply')->on('Supplies');
+            $table->integer('supply_id')->unsigned();
+            $table->foreign('supply_id')->references('id')->on('Supplies');
             $table->timestamps();
         });
     }

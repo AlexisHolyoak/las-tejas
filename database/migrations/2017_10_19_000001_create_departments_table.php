@@ -14,7 +14,7 @@ class CreateDepartmentsTable extends Migration
     public function up()
     {
         Schema::create('Departments', function (Blueprint $table) {
-            $table->increments('idDepartment');
+            $table->increments('id');
             $table->string('nameDepartment',100);
         });
     }

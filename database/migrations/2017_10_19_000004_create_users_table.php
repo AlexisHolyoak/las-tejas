@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('Users', function (Blueprint $table) {
-            $table->increments('idUser');
+            $table->increments('id');
             $table->string('nameUser');
             $table->string('firstSurNameUser');
             $table->string('secondSurNameUser');
@@ -26,14 +26,13 @@ class CreateUsersTable extends Migration
             $table->string('addressUser')->nullable();
             $table->string('phoneUser')->nullable();
             $table->string('cellPhoneUser')->nullable();
-            $table->string('emailUser')->unique()->nullable();
+            $table->string('email')->unique()->nullable();
             $table->string('birthdayUser')->nullable();
-            $table->string('registrationDateUser');
             $table->string('statusUser');
             $table->string('nickNameUser')->nullable();
-            $table->string('passwordUser')->nullable();
-            $table->integer('idDistrict')->unsigned();
-            $table->foreign('idDistrict')->references('idDistrict')->on('Districts');
+            $table->string('password')->nullable();
+            $table->integer('district_id')->unsigned();
+            $table->foreign('district_id')->references('id')->on('Districts');
             $table->rememberToken();
             $table->timestamps();
         });

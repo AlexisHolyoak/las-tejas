@@ -16,7 +16,7 @@ class CreateRolesTable extends Migration
     public function up()
     {
         Schema::create('Roles', function (Blueprint $table) {
-            $table->increments('idRole');
+            $table->increments('id');
             $table->string('nameRole');          
             $table->integer('statusRole')->unsigned();
             $table->double('salaryRole');

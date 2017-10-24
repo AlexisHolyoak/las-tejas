@@ -14,15 +14,15 @@ class CreateBillsTable extends Migration
     public function up()
     {
         Schema::create('Bills', function (Blueprint $table) {
-            $table->increments('idBill');
-            $table->integer('idRequest')->unsigned();
-            $table->integer('idUser')->unsigned();
+            $table->increments('id');
+            $table->integer('request_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->dateTime('dateBill');
             $table->double('disccountBill',10,2)->nullable();
             $table->double('igvBill',10,2);
             $table->integer('statusBill')->unsigned();
-            $table->foreign('idRequest')->references('idRequest')->on('Requests');
-            $table->foreign('idUser')->references('idUser')->on('Users');
+            $table->foreign('request_id')->references('id')->on('Requests');
+            $table->foreign('user_id')->references('id')->on('Users');
             $table->timestamps();
         });
     }

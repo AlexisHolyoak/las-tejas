@@ -16,12 +16,12 @@ class CreateOrderDishesTable extends Migration
     public function up()
     {
         Schema::create('OrderDishes', function (Blueprint $table) {
-            $table->increments('idOrderDish');
-            $table->integer('idDish')->unsigned();
-            $table->integer('idOrder')->unsigned();
+            $table->increments('id');
+            $table->integer('dish_id')->unsigned();
+            $table->integer('order_id')->unsigned();
             $table->string('statusOrderDish');
-            $table->foreign('idDish')->references("idDish")->on('Dishes');
-            $table->foreign('idOrder')->references("idOrder")->on('Orders');
+            $table->foreign('dish_id')->references("id")->on('Dishes');
+            $table->foreign('order_id')->references("id")->on('Orders');
             $table->timestamps();
         });
     }
