@@ -14,7 +14,7 @@ class CreateSuppliesTable extends Migration
     public function up()
     {
         Schema::create('Supplies', function (Blueprint $table) {
-          $table->increments('id');
+          $table->increments('idSupply');
           $table->string('nameSupply');
           $table->date('acquisitionDateSupply');
           $table->timestamps();

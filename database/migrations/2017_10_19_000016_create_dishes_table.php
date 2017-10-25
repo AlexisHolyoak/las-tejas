@@ -14,13 +14,13 @@ class CreateDishesTable extends Migration
     public function up()
     {
         Schema::create('Dishes', function (Blueprint $table) {
-          $table->increments('id');
+          $table->increments('idDish');
           $table->string('nameDish');
           $table->integer('statusDish')->unsigned();
-          $table->integer('subcategory_id')->unsigned();
-          $table->integer('subtype_id')->unsigned();
-          $table->foreign('subcategory_id')->references('id')->on('SubCategories');
-          $table->foreign('subtype_id')->references('id')->on('SubTypes');
+          $table->integer('idSubCategory')->unsigned();
+          $table->integer('idSubType')->unsigned();
+          $table->foreign('idSubCategory')->references('idSubCategory')->on('SubCategories');
+          $table->foreign('idSubType')->references('idSubType')->on('SubTypes');
           $table->timestamps();
         });
     }

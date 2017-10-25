@@ -39,33 +39,49 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'nameUser'=>'required',
+            'firstSurNameUser'=>'required',
+            'secondSurNameUser'=>'required',
+            'genderUser'=>'required',
+            'dniUser'=>'required',
+            'rucUser'=>'required',
+            'addressUser'=>'required',
+            'phoneUser'=>'required|min:7',
+            'cellPhoneUser'=>'required|min:9',
+            'email'=>'required|string|email|max:255|unique:Users',
+            'birthdayUser'=>'required',
+            'nickNameUser'=>'required',
+            'password'=>'required|string|min:6|confirmed',
+            'districts'=>'numeric|required'
         ]);
     }
-
     /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \lastejas\User
+     * @return \lastejas\Models\User
      */
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'nameUser' => $data['nameUser'],
+            'firstSurNameUser' => $data['firstSurNameUser'],
+            'secondSurNameUser' => $data['secondSurNameUser'],
+            'genderUser' => $data['genderUser'],
+            'dniUser' => $data['dniUser'],
+            'rucUser' => $data['rucUser'],
+            'addressUser' => $data['addressUser'],
+            'phoneUser' => $data['phoneUser'],
+            'cellPhoneUser' => $data['cellPhoneUser'],
             'email' => $data['email'],
+            'birthdayUser' => $data['birthdayUser'],
+            'statusUser' => 'Activo',
+            'nickNameUser' => $data['nickNameUser'],
             'password' => bcrypt($data['password']),
+            'idDistrict' => $data['districts'],
         ]);
     }
 }

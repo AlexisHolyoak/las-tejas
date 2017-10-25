@@ -14,15 +14,15 @@ class CreateTablesTable extends Migration
     public function up()
     {
         Schema::create('Tables', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('idTable');
             $table->integer('numberTable')->unsigned();
             $table->integer('numberOfChairsTable')->unsigned();
             $table->integer('statusTable')->unsigned();
             $table->string('statusOfAttentionTable');
-            $table->integer('branch_id')->unsigned();
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('Users');
-            $table->foreign('branch_id')->references('id')->on('Branches');
+            $table->integer('idBranch')->unsigned();
+            $table->integer('idUser')->unsigned();
+            $table->foreign('idUser')->references('idUser')->on('Users');
+            $table->foreign('idBranch')->references('idBranch')->on('Branches');
             $table->timestamps();
         });
     }
