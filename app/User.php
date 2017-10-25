@@ -8,12 +8,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     public $timestamps = true;
     protected $table = 'Users';
     protected $primaryKey = 'idUser';
@@ -38,11 +32,4 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    /*public function district(){
-        return $this->hasOne('lastejas\Distric', 'id');
-    }
-    public function userroles(){
-        return $this->hasMany('lastejas\UserRole');
-    }*/
 }

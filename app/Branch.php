@@ -20,9 +20,4 @@ class Branch extends Model
     ];
     
     protected $hidden = [];
-
-    /*public function userroles(){
-        return $this->hasMany('lastejas\UserRole');
-    }*/
-
 }

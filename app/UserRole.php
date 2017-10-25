@@ -19,16 +19,4 @@ class UserRole extends Model
     protected $hidden = [
 
     ];
-
-    /*public function user(){
-        return $this->hasOne('lastejas\User', 'id');
-    }
-    
-    public function role(){
-        return $this->hasOne('lastejas\Role', 'id');
-    }
-
-    public function branch(){
-        return $this->hasOne('lastejas\Branch', 'id');
-    }*/
 }

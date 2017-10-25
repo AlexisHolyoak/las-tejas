@@ -11,11 +11,4 @@ class Province extends Model
     protected $primaryKey = "idProvince";
     protected $fillable = [];
     protected $hidden = [];
-
-    /*public function department(){
-    	return $this->hasOne('lastejas\Department', 'id');
-    }
-    public function districts(){
-    	return $this->hasMany('lastejas\District');
-    }*/
 }

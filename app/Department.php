@@ -11,9 +11,4 @@ class Department extends Model
     protected $primaryKey = "idDepartment";
     protected $fillable = [];
     protected $hidden = [];
-
-    /*public function provinces(){
-    	return $this->hasMany('lastejas\Province');
-    }*/
-
 }

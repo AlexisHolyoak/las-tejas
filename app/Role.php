@@ -16,11 +16,5 @@ class Role extends Model
     	'salaryRole'
     ];
     
-    protected $hidden = [
-
-    ];
-
-    /*public function userroles(){
-    	return $this->hasMany('lastejas\UserRole');
-    }*/
+    protected $hidden = [];
 }
