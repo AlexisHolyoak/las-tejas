@@ -14,16 +14,35 @@ class User extends Authenticatable
      *
      * @var array
      */
+    public $timestamps = true;
+    protected $table = 'Users';
+    protected $primaryKey = 'idUser';
     protected $fillable = [
-        'name', 'email', 'password',
+        'nameUser',
+        'firstSurNameUser',
+        'secondSurNameUser',
+        'genderUser',
+        'dniUser',
+        'rucUser',
+        'addressUser',
+        'phoneUser',
+        'cellPhoneUser',
+        'email',
+        'birthdayUser',
+        'statusUser',
+        'nickNameUser',
+        'password',
+        'idDistrict'
     ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
+    
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /*public function district(){
+        return $this->hasOne('lastejas\Distric', 'id');
+    }
+    public function userroles(){
+        return $this->hasMany('lastejas\UserRole');
+    }*/
 }
