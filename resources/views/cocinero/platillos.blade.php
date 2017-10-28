@@ -27,10 +27,16 @@
 			        <br><img class="img-thumbnail circle" src="{{asset('images/Arroz-con-pollo.jpeg')}}" height="150px" width="150px">
 			        <h4><strong>Arroz con Pollo</strong></h4>
 			        <address>
-			        	<strong>Categoría: </strong>Platos Típicos<br>
+			        	<strong>Subcategoría: </strong>Menu<br>
+			        </address>
+			        <address>
+			        	<strong>Subtipo: </strong>Plato de fondo<br>
 			        </address>
 			        <address>
 			            <strong>Precio: </strong>S/15.00<br>
+			        </address>
+			        <address>
+			            <strong>Descripcion: </strong>Sin descripcion<br>
 			        </address>
 			        <div class="c-box-footer">
 			            <a href="#" class="btn btn-info circle" data-toggle="modal" data-target="#mdl-edit-comida"><span>Editar</span></a>
@@ -43,10 +49,16 @@
 			        <br><img class="img-thumbnail circle" src="{{asset('images/Arroz-con-pollo.jpeg')}}" height="150px" width="150px">
 			        <h4><strong>Arroz con Pollo</strong></h4>
 			        <address>
-			        	<strong>Categoría: </strong>Platos Típicos<br>
+			        	<strong>Subcategoría: </strong>Menu<br>
+			        </address>
+			        <address>
+			        	<strong>Subtipo: </strong>Plato de fondo<br>
 			        </address>
 			        <address>
 			            <strong>Precio: </strong>S/15.00<br>
+			        </address>
+			        <address>
+			            <strong>Descripcion: </strong>Sin descripcion<br>
 			        </address>
 			        <div class="c-box-footer">
 			            <a href="#" class="btn btn-info circle" data-toggle="modal" data-target="#mdl-edit-comida"><span>Editar</span></a>
@@ -59,10 +71,16 @@
 			        <br><img class="img-thumbnail circle" src="{{asset('images/Arroz-con-pollo.jpeg')}}" height="150px" width="150px">
 			        <h4><strong>Arroz con Pollo</strong></h4>
 			        <address>
-			        	<strong>Categoría: </strong>Platos Típicos<br>
+			        	<strong>Subcategoría: </strong>Menu<br>
+			        </address>
+			        <address>
+			        	<strong>Subtipo: </strong>Plato de fondo<br>
 			        </address>
 			        <address>
 			            <strong>Precio: </strong>S/15.00<br>
+			        </address>
+			        <address>
+			            <strong>Descripcion: </strong>Sin descripcion<br>
 			        </address>
 			        <div class="c-box-footer">
 			            <a href="#" class="btn btn-info circle" data-toggle="modal" data-target="#mdl-edit-comida"><span>Editar</span></a>
@@ -75,10 +93,16 @@
 			        <br><img class="img-thumbnail circle" src="{{asset('images/Arroz-con-pollo.jpeg')}}" height="150px" width="150px">
 			        <h4><strong>Arroz con Pollo</strong></h4>
 			        <address>
-			        	<strong>Categoría: </strong>Platos Típicos<br>
+			        	<strong>Subcategoría: </strong>Menu<br>
+			        </address>
+			        <address>
+			        	<strong>Subtipo: </strong>Plato de fondo<br>
 			        </address>
 			        <address>
 			            <strong>Precio: </strong>S/15.00<br>
+			        </address>
+			        <address>
+			            <strong>Descripcion: </strong>Sin descripcion<br>
 			        </address>
 			        <div class="c-box-footer">
 			            <a href="#" class="btn btn-info circle" data-toggle="modal" data-target="#mdl-edit-comida"><span>Editar</span></a>
@@ -91,10 +115,16 @@
 			        <br><img class="img-thumbnail circle" src="{{asset('images/Arroz-con-pollo.jpeg')}}" height="150px" width="150px">
 			        <h4><strong>Arroz con Pollo</strong></h4>
 			        <address>
-			        	<strong>Categoría: </strong>Platos Típicos<br>
+			        	<strong>Subcategoría: </strong>Menu<br>
+			        </address>
+			        <address>
+			        	<strong>Subtipo: </strong>Plato de fondo<br>
 			        </address>
 			        <address>
 			            <strong>Precio: </strong>S/15.00<br>
+			        </address>
+			        <address>
+			            <strong>Descripcion: </strong>Sin descripcion<br>
 			        </address>
 			        <div class="c-box-footer">
 			            <a href="#" class="btn btn-info circle" data-toggle="modal" data-target="#mdl-edit-comida"><span>Editar</span></a>
@@ -107,26 +137,16 @@
 			        <br><img class="img-thumbnail circle" src="{{asset('images/Arroz-con-pollo.jpeg')}}" height="150px" width="150px">
 			        <h4><strong>Arroz con Pollo</strong></h4>
 			        <address>
-			        	<strong>Categoría: </strong>Platos Típicos<br>
+			        	<strong>Subcategoría: </strong>Menu<br>
+			        </address>
+			        <address>
+			        	<strong>Subtipo: </strong>Plato de fondo<br>
 			        </address>
 			        <address>
 			            <strong>Precio: </strong>S/15.00<br>
 			        </address>
-			        <div class="c-box-footer">
-			            <a href="#" class="btn btn-info circle" data-toggle="modal" data-target="#mdl-edit-comida"><span>Editar</span></a>
-			            <a href="#" class="btn btn-danger circle" data-toggle="modal" data-target="#mdl-del-comida"><span>Eliminar</span></span></a>
-			        </div>
-			    </div>
-			</div>
-			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-				<div class="c-box center-version">
-			        <br><img class="img-thumbnail circle" src="{{asset('images/Arroz-con-pollo.jpeg')}}" height="150px" width="150px">
-			        <h4><strong>Arroz con Pollo</strong></h4>
 			        <address>
-			        	<strong>Categoría: </strong>Platos Típicos<br>
-			        </address>
-			        <address>
-			            <strong>Precio: </strong>S/15.00<br>
+			            <strong>Descripcion: </strong>Sin descripcion<br>
 			        </address>
 			        <div class="c-box-footer">
 			            <a href="#" class="btn btn-info circle" data-toggle="modal" data-target="#mdl-edit-comida"><span>Editar</span></a>
@@ -139,10 +159,16 @@
 			        <br><img class="img-thumbnail circle" src="{{asset('images/Arroz-con-pollo.jpeg')}}" height="150px" width="150px">
 			        <h4><strong>Arroz con Pollo</strong></h4>
 			        <address>
-			        	<strong>Categoría: </strong>Platos Típicos<br>
+			        	<strong>Subcategoría: </strong>Menu<br>
+			        </address>
+			        <address>
+			        	<strong>Subtipo: </strong>Plato de fondo<br>
 			        </address>
 			        <address>
 			            <strong>Precio: </strong>S/15.00<br>
+			        </address>
+			        <address>
+			            <strong>Descripcion: </strong>Sin descripcion<br>
 			        </address>
 			        <div class="c-box-footer">
 			            <a href="#" class="btn btn-info circle" data-toggle="modal" data-target="#mdl-edit-comida"><span>Editar</span></a>
@@ -150,6 +176,29 @@
 			        </div>
 			    </div>
 			</div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+				<div class="c-box center-version">
+			        <br><img class="img-thumbnail circle" src="{{asset('images/Arroz-con-pollo.jpeg')}}" height="150px" width="150px">
+			        <h4><strong>Arroz con Pollo</strong></h4>
+			        <address>
+			        	<strong>Subcategoría: </strong>Menu<br>
+			        </address>
+			        <address>
+			        	<strong>Subtipo: </strong>Plato de fondo<br>
+			        </address>
+			        <address>
+			            <strong>Precio: </strong>S/15.00<br>
+			        </address>
+			        <address>
+			            <strong>Descripcion: </strong>Sin descripcion<br>
+			        </address>
+			        <div class="c-box-footer">
+			            <a href="#" class="btn btn-info circle" data-toggle="modal" data-target="#mdl-edit-comida"><span>Editar</span></a>
+			            <a href="#" class="btn btn-danger circle" data-toggle="modal" data-target="#mdl-del-comida"><span>Eliminar</span></a>
+			        </div>
+			    </div>
+			</div>
+
 		</div>
 		<div class="modal fade" id="mdl-add-comida" tabindex="-1" role="dialog" aria-labelledby="mdl-add-comida" aria-hidden="true">
 		  <div class="modal-dialog">
@@ -161,16 +210,28 @@
 		        </button>
 		      </div>
 		      <div class="modal-body">
-				<label for="nombre">Nombre</label>
-				<input type="text" name="nombre" class="form-control" placeholder="Nombre de la Comida...">
-
-				<label for="precio">Precio</label>
-				<input type="text" name="precio" class="form-control" placeholder="Precio de la Comida...">
-
-				<label for="descripcion">Descripción</label>
-				<input type="text" name="descripcion" class="form-control" placeholder="Descripción de la Comida...">
-				<label for="imagen">Imagen</label>
-				<input type="file" name="imagen" class="form-control">
+    				<label for="nombre">Nombre</label>
+    				<input type="text" name="nombre" class="form-control" placeholder="Nombre de la Comida...">
+    				<label for="precio">Precio</label>
+    				<input type="text" name="precio" class="form-control" placeholder="Precio de la Comida...">
+    				<label for="descripcion">Descripción</label>
+    				<input type="text" name="descripcion" class="form-control" placeholder="Descripción de la Comida...">
+    				<label for="descripcion">SubTipo</label>
+            <select class="d-block">
+              <option value="">1</option>
+              <option value="">2</option>
+              <option value="">3</option>
+              <option value="">4</option>
+            </select>
+    				<label for="descripcion">SubCategoria</label>
+            <select class="d-block">
+              <option value="">1</option>
+              <option value="">2</option>
+              <option value="">3</option>
+              <option value="">4</option>
+            </select>
+    				<label for="imagen">Imagen</label>
+    				<input type="file" name="imagen" class="form-control">
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-danger" data-dismiss="modal">Close <img src="{{asset('images/salida.svg')}}" height="20" width="20"></button>
@@ -189,14 +250,28 @@
 		        </button>
 		      </div>
 		      <div class="modal-body">
-				<label for="nombre">Nombre</label>
-				<input type="text" name="nombre" class="form-control" placeholder="Nombre de la Comida..." value="Arroz con Pollo">
-				<label for="precio">Precio</label>
-				<input type="text" name="precio" class="form-control" placeholder="Precio de la Comida..." value="15.00">
-				<label for="descripcion">Descripción</label>
-				<input type="text" name="descripcion" class="form-control" placeholder="Descripción de la Comida..." value="Plato típico de la region x...">
-				<label for="imagen">Imagen</label>
-				<input type="file" name="imagen" class="form-control">
+    				<label for="nombre">Nombre</label>
+    				<input type="text" name="nombre" class="form-control" placeholder="Nombre de la Comida..." value="Arroz con Pollo">
+    				<label for="precio">Precio</label>
+    				<input type="text" name="precio" class="form-control" placeholder="Precio de la Comida..." value="15.00">
+    				<label for="descripcion">Descripción</label>
+    				<input type="text" name="descripcion" class="form-control" placeholder="Descripción de la Comida..." value="Plato típico de la region x...">
+    				<label for="descripcion">SubCategoria</label>
+            <select class="d-block">
+              <option value="">1</option>
+              <option value="">2</option>
+              <option value="">3</option>
+              <option value="">4</option>
+            </select>
+    				<label for="descripcion">SubTipo</label>
+            <select class="d-block">
+              <option value="">1</option>
+              <option value="">2</option>
+              <option value="">3</option>
+              <option value="">4</option>
+            </select>
+            <label for="imagen">Imagen</label>
+    				<input type="file" name="imagen" class="form-control">
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-danger" data-dismiss="modal">Close <img src="{{asset('images/salida.svg')}}" height="20" width="20"></button>
@@ -250,10 +325,6 @@
 		    </div>
 		  </div>
 		</div>
-		<footer class="footer background-nav">
-	      <div class="container">
-	      	<a href="#" class="navbar-brand link">Sistema Nasa</a>
-	      </div>
   </div>
 </div>
 
