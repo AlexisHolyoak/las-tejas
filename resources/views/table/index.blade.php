@@ -28,13 +28,7 @@
                   <td  class="align-middle">{{$table-> USER}} {{$table->FIRST}} {{$table->SECOND}}</td>
                   <td  class="align-middle"><a href="{{route('table.show',$table-> CODIGO)}}" class="btn btn-primary pull-right">Ver</a></td>
                   <td  class="align-middle"><a href="{{route('table.edit',$table-> CODIGO)}}" class="btn btn-warning pull-right">Actualizar</a></td>
-                  <td class="align-middle">
-                  <form class="" action="{{route('table.destroy',$table->CODIGO)}}" method="post" >
-                    <input type="hidden" name="_method" value="DELETE">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <button type="submit" name="button" class="btn btn-danger pull-right" id="deletegroup">Eliminar</button>
-                  </form>
-                </tr>
+                  <td  class="align-middle"><a href="" data-target="#modal-delete-{{$table->CODIGO}}" data-toggle="modal" class="btn btn-danger pull-right">Eliminar</a></td>
               <!--@include('table.destroy')-->
               @endforeach
             </tbody>
@@ -48,4 +42,7 @@
       </div>
       {{$tables->render()}}
 </div>
+@foreach ($tables as $table)
+  @include('table.destroy')
+@endforeach
 @endsection
