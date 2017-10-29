@@ -33,6 +33,15 @@
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Las Tejas') }}
                     </a>
+                    @guest
+
+                    @else
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="{{ url('branch') }}">Sucursales</a></li>
+                        <li><a href="{{ url('role') }}">Roles</a></li>
+                        <li><a href="{{ url('auth') }}">Usuarios</a></li>
+                    </ul>
+                    @endguest
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -46,11 +55,10 @@
                         <!-- Authentication Links -->
                         @guest
                             <li><a href="{{ route('login') }}">Iniciar Sesión</a></li>
-                            <li><a href="{{ route('register') }}">Registrarse</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->nickNameUser }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -86,6 +94,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-     <script type="text/javascript" src="{{asset('js\javascript.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js\javascript.js')}}"></script>
+    @stack('script')
 </body>
 </html>
