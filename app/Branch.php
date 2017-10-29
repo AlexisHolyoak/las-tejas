@@ -10,7 +10,7 @@ class Branch extends Model
     protected $primaryKey = 'idBranch';
     protected $table = 'Branches';
     protected $fillable = [
-        'nameBranch', 'kinOfBussinessBranch', 'rucBranch', 'addressBranch', 'logoBranch', 'kinOfExchangeBranch'
+        'nameBranch', 'kindOfBussinessBranch', 'rucBranch', 'addressBranch', 'logoBranch', 'kindOfExchangeBranch'
     ];
 
     protected $hidden = [];

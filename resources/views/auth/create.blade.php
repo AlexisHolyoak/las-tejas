@@ -6,10 +6,10 @@
         <div class="col-md-10 col-md-offset-1">            
             <div class="panel panel-default" style="margin-bottom: 80px">
                 <div class="panel-heading" align="center">
-                    <h2>Registrar nuevo Usuario</h2>
+                    <h2>Crear nuevo Usuario</h2>
                 </div>
                 <div class="panel-body">
-                    <form method="POST" action="{{ route('register')}}">
+                    <form method="POST" action="{{ action('UserController@store')}}">
                         {{ csrf_field() }}
                         <div class="form-group col-md-4" align="center">
                             <label for="nameUser">Nombre de Usuario</label>
@@ -104,7 +104,8 @@
                             <p class="label label-danger">{{$errors->first('idDistrict')}}</p>
                         </div>
                         <div class="form-group col-md-12" align="center">
-                            <button class="btn btn-primary">Registrar Usuario</button>
+                            <a href="{{route('auth.index')}}" class="btn btn-default">Regresar a la Lista</a>
+                            <button class="btn btn-primary">Guardar Usuario</button>
                         </div>
                     </form>
                 </div>
