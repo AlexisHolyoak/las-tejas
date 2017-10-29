@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOrderTypesTable extends Migration
+class CreateSubCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateOrderTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('OrderTypes', function (Blueprint $table) {
-            $table->increments('idOrderType');
-            $table->string('orderTypeName');        
-        
-            $table->timestamps();
+        Schema::create('SubCategories', function (Blueprint $table) {
+          $table->increments('idSubCategory');
+          $table->string('nameSubCategory');
+          $table->integer('statusSubCategory')->unsigned();
+          $table->timestamps();
         });
     }
 
@@ -28,6 +28,6 @@ class CreateOrderTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('OrderTypes');
+        Schema::dropIfExists('SubCategories');
     }
 }

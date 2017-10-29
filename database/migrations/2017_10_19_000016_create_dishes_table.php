@@ -15,8 +15,12 @@ class CreateDishesTable extends Migration
     {
         Schema::create('Dishes', function (Blueprint $table) {
           $table->increments('idDish');
-          $table->string('nameDish',30);
-            $table->foreign('idSubcategory')->references('idSubcategory')->on('Subcategories')->onDelete('cascade');
+          $table->string('nameDish');
+          $table->integer('statusDish')->unsigned();
+          $table->integer('idSubCategory')->unsigned();
+          $table->integer('idSubType')->unsigned();
+          $table->foreign('idSubCategory')->references('idSubCategory')->on('SubCategories');
+          $table->foreign('idSubType')->references('idSubType')->on('SubTypes');
           $table->timestamps();
         });
     }

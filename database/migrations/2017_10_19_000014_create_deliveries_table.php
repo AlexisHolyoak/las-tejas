@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+/*
+modified by: Alexis Holyoak 19/10/17
+*/
 class CreateDeliveriesTable extends Migration
 {
     /**
@@ -15,11 +17,13 @@ class CreateDeliveriesTable extends Migration
     {
         Schema::create('Deliveries', function (Blueprint $table) {
             $table->increments('idDelivery');
-            $table->date('estimatedTime');
-            $table->integer('idPerson');
-            $table->integer('idVoucher');
-            $table->foreign('idPerson')->references('idPerson')->on('Perons');
-            $table->foreign('idVoucher')->references('idVoucher')->on('Vouchers');
+            $table->date('dateDelivery');
+            $table->string('statusDelivery');
+            $table->string('referenceDelivery');
+            $table->integer('idUser')->unsigned();
+            $table->integer('idBill')->unsigned();
+            $table->foreign('idUser')->references('idUser')->on('Users');
+            $table->foreign('idBill')->references('idBill')->on('Bills');
             $table->timestamps();
         });
     }
