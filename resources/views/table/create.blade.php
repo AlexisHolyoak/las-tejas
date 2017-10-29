@@ -59,7 +59,7 @@
           <div class="form-group">
             <div class="col-md-8 col-md-offset-4">
               <button type="submit" class="btn btn-primary">Crear</button>
-              <a href="{{url('/table/index')}}" class="btn btn-primary">Cancelar</a>
+              <a href="{{url('/table/')}}" class="btn btn-primary">Cancelar</a>
             </div>
           </div>
         </div>
