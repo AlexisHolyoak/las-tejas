@@ -9,7 +9,7 @@
 					<div class="input-group col-md-8">
 				      <input id="search" name="search" type="text" class="form-control" placeholder="Ingres el Nombre o Apellido..." value="{{$search}}">
 				      <span class="input-group-btn">
-				        <button class="btn btn-primary" type="button">Buscar Usuario!</button>
+				        <button class="btn btn-primary" type="submit">Buscar Usuario!</button>
 				      </span>
 				    </div>
 				</form>
