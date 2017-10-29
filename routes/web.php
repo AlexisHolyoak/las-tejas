@@ -19,8 +19,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/ordenes/',function(){
   return view('cocinero.ordenes');
 });
-Route::get('/platillos/',function(){
-  return view('cocinero.platillos');
+Route::prefix('platillos')->group(function(){
+    Route::get('/', 'Dishes\Dishes@index');
+    Route::post('/agregar', 'Dishes\Dishes@store');
+    Route::post('/refresh', 'Dishes\Dishes@refreshProducts');
+    Route::post('/edit/{id}', 'Dishes\Dishes@edit');
+    Route::put('/update/{id}', 'Dishes\Dishes@update');
+    Route::post('/delete/{id}', 'Dishes\Dishes@delete');
 });
 Route::get('/mozo/',function(){
   return view('mozo.mesas');
