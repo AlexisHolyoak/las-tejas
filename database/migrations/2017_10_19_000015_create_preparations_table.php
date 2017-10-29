@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBranchesTable extends Migration
+class CreatePreparationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateBranchesTable extends Migration
      */
     public function up()
     {
-        Schema::create('Branches', function (Blueprint $table) {
-            $table->increments('idBranch');
-            $table->string('address');
-            $table->string('observation');
+        Schema::create('Preparations', function (Blueprint $table) {
+            $table->increments('idPreparation');
+            $table->double('estimatedTimePreparation');
+            $table->integer('idSupply')->unsigned();
+            $table->foreign('idSupply')->references('idSupply')->on('Supplies');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateBranchesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Branches');
+        Schema::dropIfExists('Preparations');
     }
 }
