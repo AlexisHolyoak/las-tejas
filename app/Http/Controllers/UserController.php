@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use lastejas\{User,Department,Province,District};
 use Illuminate\Support\Facades\Hash;
 use Validator;
+use PDF;
 
 class UserController extends Controller
 {
@@ -64,12 +65,12 @@ class UserController extends Controller
             'province.required' => 'Seleccione una Provincia.',
             'idDistrict.required' => 'Seleccione un Distrito.',
         ]);
- 
+
         if ($validations->fails())
         {
             return redirect()->back()->withInput()->withErrors($validations->errors());
         }
-        $user =new User;        
+        $user =new User;
         $user->nameUser = $request->get('nameUser');
         $user->firstSurNameUser = $request->get('firstSurNameUser');
         $user->secondSurNameUser = $request->get('secondSurNameUser');
@@ -137,12 +138,12 @@ class UserController extends Controller
             'province.required' => 'Seleccione una Provincia.',
             'idDistrict.required' => 'Seleccione un Distrito.',
         ]);
- 
+
         if ($validations->fails())
         {
             return redirect()->back()->withInput()->withErrors($validations->errors());
         }
-        $user = User::find($id);		
+        $user = User::find($id);
 		$user->nameUser = $request->get('nameUser');
         $user->firstSurNameUser = $request->get('firstSurNameUser');
         $user->secondSurNameUser = $request->get('secondSurNameUser');
@@ -163,5 +164,15 @@ class UserController extends Controller
         $user->statusUser = $user->statusUser=='Activo'?"Inactivo":'Activo';
         $user->save();
         return redirect()->route('auth.index');
+    }
+    public function generarPDF(){
+      $users=User::all();
+      $pdf=PDF::loadView('reporte.reportetotal',['users'=>$users]);
+      return $pdf->stream('reporte1.pdf');
+    }
+    public function descargarPDF(){
+      $users=User::all();
+      $pdf=PDF::loadView('reporte.reportetotal',['users'=>$users]);
+      return $pdf->download('reporte2.pdf');
     }
 }
