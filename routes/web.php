@@ -56,3 +56,8 @@ Route::get('/ajax-users/{id}',function($id){
   ->get();
   return Response::json($userroles);
 });
+Route::get('/generarPDF','UserController@generarPDF');
+Route::get('/downloadPDF','UserController@descargarPDF');
+Route::get('pdf',function(){
+    return view('reporte.reportevista');
+});
