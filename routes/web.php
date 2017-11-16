@@ -22,9 +22,8 @@ Route::get('/ordenes/',function(){
 Route::prefix('platillos')->group(function(){
     Route::get('/', 'Dishes\Dishes@index');
     Route::post('/agregar', 'Dishes\Dishes@store');
-    Route::post('/refresh', 'Dishes\Dishes@refreshProducts');
     Route::post('/edit/{id}', 'Dishes\Dishes@edit');
-    Route::put('/update/{id}', 'Dishes\Dishes@update');
+    Route::post('/update/{id}', 'Dishes\Dishes@update');
     Route::post('/delete/{id}', 'Dishes\Dishes@delete');
 });
 Route::get('/mozo/',function(){
