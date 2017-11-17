@@ -17,7 +17,7 @@ class Dishes extends Model
 
     public function scopeGetDataDish($query, $filterCategory=null){
         
-        return $query->select('idDish', 'nameDish', 'priceDish', 'nameSubCategory', 'Dishes.idSubCategory')
+        return $query->select('idDish', 'nameDish', 'priceDish', 'imageDish', 'nameSubCategory', 'Dishes.idSubCategory')
                                        ->join('SubCategories as sc', 'Dishes.idSubCategory', 'sc.idSubCategory')
                                        ->where('statusDish', 1)
                                        ->where('statusSubCategory', 1)
