@@ -24,13 +24,18 @@ class Dishes extends Controller
     }
 
     public function store(Request $request) {
-
+        $resultImgName = "default.png";
         $obj = new dishesModel();
         $obj->nameDish = $request->dishName;
         $obj->priceDish = $request->dishPrice;
         $obj->idSubCategory = $request->categoryId;
         $obj->idSubType = $request->dishType;
         $obj->statusDish = 1;
+        if(!empty($request->file('imagen'))){
+            $resultImgName = $request->file('imagen')->store('productos');
+            $resultImgName = str_replace('productos/', '',$resultImgName);
+        }
+        $obj->imageDish = $resultImgName;
         $obj->save();
 
         return redirect('platillos');
@@ -47,6 +52,11 @@ class Dishes extends Controller
         $obj->priceDish = $request->dishPrice;
         $obj->idSubCategory = $request->categoryId;
         $obj->idSubType = $request->dishType;
+        if(!empty($request->file('imagen'))){
+            $resultImgName = $request->file('imagen')->store('productos');
+            $resultImgName = str_replace('productos/', '',$resultImgName);
+            $obj->imageDish = $resultImgName;
+        }
         $obj->save();
 
         return redirect('platillos');

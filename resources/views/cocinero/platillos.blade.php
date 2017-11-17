@@ -15,7 +15,6 @@
 			</div>
 			<div class="form-group col-md-4">
 				<form class="filter_form" action="{{url('platillos')}}" method="GET">
-					<input type="hidden" name="_token" value="{{csrf_token()}}">
 					<label>Selecciona Categoría : </label>
 					<select name="filterCombo" class="form-control filter_actions">
 											<option value="0">Todos</option>
@@ -32,13 +31,13 @@
 		</div>
 		<div class="row center-row product_container">
             <?php foreach ($dataView as $key => $value):
-                $imgName = 'producto.png';
-                // $categoryEdit = $value->idSubCategory == 1 ? '#mdl-edit-comida' : '#mdl-edit-bebida';
-                // $categoryDel = $value->idSubCategory == 1 ? '#mdl-del-comida' : '#mdl-del-bebida';
             ?>
 			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 product">
 				<div class="c-box center-version">
-			        <br><img class="img-thumbnail circle" src="{{asset('images/'.$imgName)}}" height="150px" width="150px">
+			        <br>
+							<figure style="height:150px;width:150px;display:flex;align-items:center">
+								<img class="img-thumbnail circle" src="{{asset('files/productos/'.$value->imageDish)}}" style="width:100%" >
+							</figure>
 			        <h4><strong>{{ $value->nameDish }}</strong></h4>
 			        <address>
 			        	<strong>Categoría: </strong>{{ $value->nameSubCategory }}<br>
@@ -64,7 +63,7 @@
 		          <span aria-hidden="true">&times;</span>
 		        </button>
 		      </div>
-						<form class="" action="{{url('platillos/agregar')}}" method="POST">
+						<form class="add_product_form" action="{{url('platillos/agregar')}}" method="POST" enctype="multipart/form-data">
 							<div class="modal-body dish_add">
 									<input type="hidden" name="_token" value="{{csrf_token()}}">
 									<label for="nombre">Nombre</label>
@@ -88,6 +87,10 @@
 									</select>
 									<label for="imagen">Imágen</label>
 									<input type="file" name="imagen" class="form-control">
+									<div class="alertMessage" style="display:none">
+										<br>
+										<label  class="text-danger">Ingrese los datos correctamente</label>
+									</div>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-danger btn_close" data-dismiss="modal">Close <img src="{{asset('images/salida.svg')}}" height="20" width="20"></button>
@@ -106,7 +109,7 @@
 		          <span aria-hidden="true">&times;</span>
 		        </button>
 		      </div>
-					<form class="edit_form" action="" method="POST">
+					<form class="edit_product_form" action="" method="POST" enctype="multipart/form-data">
 						<div class="modal-body dish_edit">
 							<input type="hidden" name="_token" value="{{csrf_token()}}">
 							<label for="nombre">Nombre</label>
@@ -128,7 +131,10 @@
 							</select>
 							<label for="imagen">Imágen</label>
 							<input type="file" name="imagen" class="form-control">
-							<!-- <input type="hidden" name="categoryId" value="1"> -->
+							<div class="alertMessage" style="display:none">
+										<br>
+										<label  class="text-danger">Ingrese los datos correctamente</label>
+							</div>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-danger btn_close" data-dismiss="modal">Close <img src="{{asset('images/salida.svg')}}" height="20" width="20"></button>

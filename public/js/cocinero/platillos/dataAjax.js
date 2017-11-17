@@ -4,6 +4,25 @@ $(document).ready(function(){
         $('.filter_form').submit();
     });
 
+    $('.add_product_form .btn_add_dish').on('click',function(e){
+        e.preventDefault();
+        let data ={ 
+            name : $(".add_product_form input[name='dishName']").val(),
+            price : $(".add_product_form input[name='dishPrice']").val(),
+            image : $(".add_product_form input[name='imagen']").val(),
+
+        }
+
+        let result  = validateData(data);
+
+        if(result) {
+            $('.add_product_form .alertMessage').css('display','none');
+            $('.add_product_form').submit();
+        }else{
+            $('.add_product_form .alertMessage').css('display','block');
+        }
+    });
+
     $('.product_container').on('click', '.btn_edit',function(){
         let idDish = $(this).data('id');
         let _token = $('input[name="_token"]').val().trim();
@@ -21,36 +40,50 @@ $(document).ready(function(){
         $('.delete_form').attr('action','platillos/delete/'+idDish);
     });
 
-    $('.btn_del_dish').on('click', function(){
-        let idDish = $(this).data('id');
-        let _token = $('input[name="_token"]').val().trim();
-        let data = {
-            url : 'platillos/delete/'+idDish,
-            method : 'post',
-            dataFrm : '_token='+_token + '&filterCombo='+$('.filter_actions').val()
-        };
-        sendAjax(data, true);
-        $('.btn_del_dish').prop('data-id', null);
-    });
-    $('.btn_edit_dish').on('click', function(){
-        let idDish = $(this).data('id');
-        let dishName = $('.dish_edit input[name="nombre"]').val().trim();
-        let dishPrice = $('.dish_edit input[name="precio"]').val().trim();
-        let dishDescription = $('.dish_edit input[name="descripcion"]').val().trim();
-        let _token = $('input[name="_token"]').val().trim();
-        let dataForm = 'dishName='+ dishName + '&dishPrice=' + dishPrice + '&dishDescription=' + dishDescription + '&_token=' + _token + '&filterCombo='+$('.filter_actions').val();
-        let data = {
-            url : 'platillos/update/'+idDish,
-            method : 'put',
-            dataFrm : dataForm,
-            id : 1,
-        };
-        sendAjax(data, true);
-        $('.btn_edit_dish').prop('data-id', null);
+    
+    $('.edit_product_form .btn_edit_dish').on('click', function(e){
+        e.preventDefault();
+        let data ={ 
+            name : $(".edit_product_form input[name='dishName']").val(),
+            price : $(".edit_product_form input[name='dishPrice']").val(),
+            image : $(".edit_product_form input[name='imagen']").val(),
+        }
+
+        let result  = validateData(data);
+
+        if(result) {
+            $('.edit_product_form .alertMessage').css('display','none');
+            $('.edit_product_form').submit();
+        }else{
+            $('.edit_product_form .alertMessage').css('display','block');
+        }
     });
     
     $('.btn_close').on('click', limpiarCampos);
 });
+
+function validateData(data){
+    var patron = /^[a-zA-Z\s]*$/;
+    if(!parseFloat(data.price) || data.name.search(patron)){
+        return false;
+    }
+
+    if(data.image.length > 0){
+        let result = data.image.split('.');
+        let lastSplited = result[result.length-1].toLowerCase();
+
+        let imgFormats = ['png', 'jpg', 'jpeg', 'gif'];
+
+        for(item in imgFormats){
+            if (imgFormats[item] == lastSplited){
+                return true;
+            }
+        }
+        return false;
+    }
+    return true;
+
+}
 
 function sendAjax(dataAjax, refresh){
 
@@ -73,9 +106,9 @@ function sendAjax(dataAjax, refresh){
 
 function limpiarCampos(){
 
-    $('input[name="nombre"]').val('');
-    $('input[name="precio"]').val('');
-    $('input[name="descripcion"]').val('');
+    $('input[name="dishName"]').val('');
+    $('input[name="dishPrice"]').val('');
+    $('input[name="imagen"]').val('');
 
 }
 
@@ -86,8 +119,7 @@ function setDataDish(data){
     $(editContext + ' input[name="dishPrice"]').val(data[0].priceDish);
 
     $('.btn_edit_dish').attr('data-id', data[0].idDish);
-    $('.btn_edit_drink').attr('data-id', data[0].idDish);
-    $('.edit_form').attr('action','platillos/update/'+data[0].idDish);
+    $('.edit_product_form').attr('action','platillos/update/'+data[0].idDish);
     
     $(editContext + " select[name='categoryId'] option[value="+data[0].idSubCategory+"]").prop("selected", true);
     $(editContext + " select[name='dishType'] option[value="+data[0].idSubType+"]").prop("selected", true);
