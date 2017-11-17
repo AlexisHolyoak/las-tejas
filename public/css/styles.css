@@ -93,3 +93,26 @@
 .footer-page{
 	margin-top: 5px;
 }
+
+/*Button Dark*/
+.btn-dark{
+  background-color: #1E1E1E;
+  border-color: none;
+  text-decoration-color: #F6F6F6;
+  color: #FFFFFF;
+  font-style: bold;
+}
+.btn-dark:hover{
+  background-color: #393939;
+  border-color: none;
+  text-decoration-color: #F6F6F6;
+  color: #FFFFFF;
+  font-style: bold;
+}
+.btn-dark:focus{
+  background-color: #292929;
+  border-color: none;
+  text-decoration-color: #F6F6F6;
+  color: #FFFFFF;
+  font-style: bold;
+}

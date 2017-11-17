@@ -32,7 +32,7 @@
 					</thead>
 					<tbody>
 						@foreach($users as $u)
-						<tr class="user-{{$u->idUser}}">
+						<tr>
 							<td>{{$u->nameUser}}</td>
 							<td>{{$u->firstSurNameUser.' '.$u->secondSurNameUser}}</td>
 							<td>{{$u->dniUser}}</td>
@@ -55,7 +55,7 @@
 								@else
 								<button class="btn btn-success btn-xs" data-target="#active-{{$u->idUser}}" data-toggle="modal">Activar</button>
 								@endif
-								<button class="btn btn-default btn-xs">Roles</button>
+								<button class="btn btn-dark btn-xs" data-target="#rb-{{$u->idUser}}" data-toggle="modal">Roles</button>
 							</td>
 						</tr>
 						@endforeach
@@ -71,5 +71,9 @@
 	@include('auth.show')
 	@include('auth.inactive')
 	@include('auth.active')
+	
+@endforeach
+@foreach($userrole as $u)
+	@include('auth.userrole')
 @endforeach
 @endsection

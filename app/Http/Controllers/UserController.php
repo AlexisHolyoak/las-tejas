@@ -4,10 +4,9 @@ namespace lastejas\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use lastejas\{User,Department,Province,District};
+use lastejas\{User,Branch,Role,UserRole,Department,Province,District};
 use Illuminate\Support\Facades\Hash;
 use Validator;
-use PDF;
 
 class UserController extends Controller
 {
@@ -21,7 +20,13 @@ class UserController extends Controller
     	->select('us.*','di.nameDistrict as district','pr.nameProvince as province','de.nameDepartment as department')
     	->whereRaw(" LOWER(\"us\".\"nameUser\") LIKE '%".strtolower($search)."%' OR (LOWER(\"us\".\"firstSurNameUser\") LIKE '%".strtolower($search)."%' OR LOWER(\"us\".\"secondSurNameUser\") LIKE '%".strtolower($search)."%') ")
     	->paginate(4);
-    	return view('auth.index', compact('users','search'));
+        $userrole = null;
+        foreach ($users as $u) {
+            $userrole[] =  collect(['idUser'=>$u->idUser,'roles'=>DB::table('UserRoles as ur')->where('idUser',$u->idUser)->join('Roles as r','ur.idRole','r.idRole')->select('r.idRole','r.nameRole','ur.statusUserRole')->orderBy('r.idRole','asc')->get(),'branch'=>DB::table('UserRoles')->where('idUser',$u->idUser)->select('idBranch')->first()]);
+        }
+        $branches = Branch::all();
+        $roles = Role::all();
+    	return view('auth.index', compact('users','search','branches','roles','userrole'));
     }
     public function store(Request $request){
         $validations = Validator::make($request->all(), [
@@ -165,14 +170,42 @@ class UserController extends Controller
         $user->save();
         return redirect()->route('auth.index');
     }
-    public function generarPDF(){
-      $users=User::all();
-      $pdf=PDF::loadView('reporte.reportetotal',['users'=>$users]);
-      return $pdf->stream('reporte1.pdf');
-    }
-    public function descargarPDF(){
-      $users=User::all();
-      $pdf=PDF::loadView('reporte.reportetotal',['users'=>$users]);
-      return $pdf->download('reporte2.pdf');
+    public function userrole(Request $request, $id){
+        $roles = UserRole::where('idUser',$id)->get();
+        if(sizeof($roles)==0){
+            foreach (Role::all() as $r) {
+                $status=0;
+                $ur = new UserRole;
+                $ur->idUser = $id;
+                $ur->idRole = $r->idRole;
+                $ur->idBranch = $request->get('branch');
+                if(!empty($request->get('role'))){
+                    foreach ($request->get('role') as $role) {
+                        if($r->idRole == $role){
+                            $status = 1;
+                        }
+                    }
+                }
+                $ur->statusUserRole = $status;
+                $ur->save();
+            }
+        }else{
+            $urs = DB::table('UserRoles')->where('idUser', $id)->select('idUserRole','idRole','statusUserRole')->get();
+            foreach ($urs as $u) {
+                $status=0;
+                $ur = UserRole::find($u->idUserRole);
+                if(!empty($request->get('role'))){
+                    foreach ($request->get('role') as $role) {
+                        if($ur->idRole == $role){
+                            $status = 1;
+                        }
+                    }
+                }
+                $ur->statusUserRole = $status;
+                $ur->idBranch = $request->get('branch');
+                $ur->save();
+            }
+        }
+        return redirect()->route('auth.index');
     }
 }
