@@ -10,18 +10,11 @@
 
     <title>Agency - Start Bootstrap Theme</title>
 
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+
     <!-- Bootstrap core CSS -->
-    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
-    <!-- Custom fonts for this template -->
-    <link href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-
-    <!-- Custom styles for this template -->
-    <link href="{{ asset('css/agency.min.css') }}" rel="stylesheet">
 
   </head>
 
@@ -75,7 +68,7 @@
     <script src="{{ asset('js/contact_me.js') }}"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="{{asset('js/agency.min.js') }}"></script>
+    <script src="{{ asset('js/agency.min.js') }}"></script>
 
   </body>
 
