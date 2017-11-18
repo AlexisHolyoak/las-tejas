@@ -12458,16 +12458,11 @@ ul.social-buttons li a:hover {
         <div class="intro-text">
           <div class="intro-lead-in">Bienvenido a Las Tejas</div>
           <div class="intro-heading text-uppercase">Gusto de conocerte</div>
+          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{{ route('login') }}">Iniciar Sesión</a>
 
         </div>
       </div>
     </header>
-
-    <!-- Services -->
-
-    </footer>
-
-
 
     <!-- Bootstrap core JavaScript -->
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
