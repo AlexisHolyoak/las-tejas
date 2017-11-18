@@ -12,7 +12,7 @@
  */
 
 Route::get('/', function () {
-    return view('layous.admin');
+    return view('layouts.admin');
 });
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
