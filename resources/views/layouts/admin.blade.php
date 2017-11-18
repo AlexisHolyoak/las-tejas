@@ -12451,7 +12451,7 @@ ul.social-buttons li a:hover {
         </div>
       </div>
     </nav>
-  <input type="text" value="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
+
     <!-- Header -->
     <header class="masthead">
       <div class="container">
