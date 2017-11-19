@@ -73,7 +73,9 @@
 	@include('auth.active')
 	
 @endforeach
-@foreach($userrole as $u)
-	@include('auth.userrole')
-@endforeach
+<?php if (sizeof($userrole)>0): ?>
+	@foreach($userrole as $u)
+		@include('auth.userrole')
+	@endforeach
+<?php endif ?>
 @endsection
