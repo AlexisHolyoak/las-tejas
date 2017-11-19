@@ -11,7 +11,7 @@
         {{ csrf_field() }}
         <select id="branch" name="branch" class="form-control">
           <?php foreach ($branches as $b): ?>
-            <?php if ($u['branch']->idBranch == ($b->idBranch)): ?>
+            <?php if ($u['branch'] == ($b->idBranch)): ?>
               <option value="<?=$b->idBranch?>" selected><?=$b->nameBranch?></option>
             <?php else: ?>
               <option value="<?=$b->idBranch?>"><?=$b->nameBranch?></option>
