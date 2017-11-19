@@ -24,6 +24,7 @@ class UserController extends Controller
         foreach ($users as $u) {
             $userrole[] =  collect(['idUser'=>$u->idUser,'roles'=>DB::table('UserRoles as ur')->where('idUser',$u->idUser)->join('Roles as r','ur.idRole','r.idRole')->select('r.idRole','r.nameRole','ur.statusUserRole')->orderBy('r.idRole','asc')->get(),'branch'=>DB::table('UserRoles')->where('idUser',$u->idUser)->select('idBranch')->first()]);
         }
+	dd($userrole);
         $branches = Branch::all();
         $roles = Role::all();
     	return view('auth.index', compact('users','search','branches','roles','userrole'));
