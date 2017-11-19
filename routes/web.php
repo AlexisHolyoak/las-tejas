@@ -22,9 +22,8 @@ Route::get('/ordenes/',function(){
 Route::prefix('platillos')->group(function(){
     Route::get('/', 'Dishes\Dishes@index');
     Route::post('/agregar', 'Dishes\Dishes@store');
-    Route::post('/refresh', 'Dishes\Dishes@refreshProducts');
     Route::post('/edit/{id}', 'Dishes\Dishes@edit');
-    Route::put('/update/{id}', 'Dishes\Dishes@update');
+    Route::post('/update/{id}', 'Dishes\Dishes@update');
     Route::post('/delete/{id}', 'Dishes\Dishes@delete');
 });
 Route::get('/mozo/',function(){
@@ -32,6 +31,7 @@ Route::get('/mozo/',function(){
 });
 Route::resource('branch', 'BranchController');
 Route::resource('auth', 'UserController');
+Route::post('/userrole/{id}', 'UserController@userrole');
 Route::get('auth/create', function(){
 	return view('auth.create');
 });
@@ -56,8 +56,8 @@ Route::get('/ajax-users/{id}',function($id){
   ->get();
   return Response::json($userroles);
 });
-Route::get('/generarPDF','UserController@generarPDF');
-Route::get('/downloadPDF','UserController@descargarPDF');
-Route::get('pdf',function(){
-    return view('reporte.reportevista');
+Route::prefix('reports')->group(function(){
+    Route::get('/', 'ReportController@index');
+    Route::get('/user/pdf/{id}', 'ReportController@reportUsersPdf');
+    Route::get('/user/excel', 'ReportController@reportUsersXls');
 });

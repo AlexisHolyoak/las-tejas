@@ -16,6 +16,8 @@ class CreateDishesTable extends Migration
         Schema::create('Dishes', function (Blueprint $table) {
           $table->increments('idDish');
           $table->string('nameDish');
+          $table->double('priceDish',10,2);
+          $table->string('imageDish');
           $table->integer('statusDish')->unsigned();
           $table->integer('idSubCategory')->unsigned();
           $table->integer('idSubType')->unsigned();
