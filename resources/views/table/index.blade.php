@@ -1,4 +1,4 @@
-@extends ('layouts.admin')
+@extends ('layouts.app')
 @section ('content')
 <div class="container col-md-10 col-md-offset-1">
         <h3>
