@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>Las Tejas</title>
+
+    <!---Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
@@ -41,8 +46,7 @@
                                 <li><a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Cerrar Sesión
-                                        </a>
+                                            Cerrar Sesión</a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
@@ -58,6 +62,13 @@
                     </li>
                     <li>
                         <a href="{{ url('branch') }}"><i class="fa fa-map-marker"></i><span class="nav-label">Sucursales</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="{{asset('images/add-comida.svg')}}" height="20" width="20"></i> <span class="nav-label"> Cocinero </span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="{{ url('platillos') }}">Platillos</a></li>
+                            <li><a href="#">Ordenes</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-file"></i> <span class="nav-label">Reportes </span><span class="fa arrow"></span></a>

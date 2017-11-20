@@ -4619,25 +4619,19 @@ body.mini-navbar.fixed-sidebar .logo-element {
 }
 /* CONTACTS */
 .contact-box {
-  background-color: #ffffff;
-  border: 1px solid #e7eaec;
+  background-color: rgb(219, 227, 246);
+  border: 2px solid #242424;
   padding: 20px;
   margin-bottom: 20px;
 }
-.contact-box > a {
-  color: inherit;
-}
 .contact-box.center-version {
-  border: 1px solid #e7eaec;
-  padding: 0;
-}
-.contact-box.center-version > a {
+  border: 2px solid #5d5d5d;
+  border-radius: 8px;
   display: block;
-  background-color: #ffffff;
-  padding: 20px;
+  padding: 0px;
   text-align: center;
 }
-.contact-box.center-version > a img {
+.contact-box.center-version > img {
   width: 80px;
   height: 80px;
   margin-top: 10px;
@@ -4648,8 +4642,9 @@ body.mini-navbar.fixed-sidebar .logo-element {
 }
 .contact-box .contact-box-footer {
   text-align: center;
-  background-color: #ffffff;
-  border-top: 1px solid #e7eaec;
+  background-color: rgb(159, 169, 212);
+  border-radius: 0px 0px 8px 8px;
+  border-top: 2px solid #5d5d5d;
   padding: 15px 20px;
 }
 /* INVOICE */
