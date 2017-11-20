@@ -11,6 +11,9 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class ReportController extends Controller
 {
+	public function __construct(){
+        $this->middleware('auth');
+    }
 	public function index(){
 		return view('reports.index');
 	}
@@ -18,10 +21,6 @@ class ReportController extends Controller
       $users=User::all();
       $pdf=PDF::loadView('reports.reportuserspdf',['users'=>$users]);
       return $op==1?$pdf->stream('users.pdf'):$pdf->download('users.pdf');
-    }
-    public function arrayUser($users){
-    	
-	    return $arrayUser;
     }
     public function reportUsersXls(){	    
        	Excel::create('Users of Las Tejas', function($excel) {

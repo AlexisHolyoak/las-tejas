@@ -1,7 +1,7 @@
 <div class="modal fade" id="show-{{$u->idUser}}" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="background-color: #E2C186;color: #FFFFFF" align="center">
+      <div class="modal-header" style="background-color: #f8ac59;color: #FFFFFF" align="center">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title">Datos del Usuario</h4>
       </div>

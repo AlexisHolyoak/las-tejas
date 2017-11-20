@@ -10,6 +10,9 @@ use Validator;
 
 class UserController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function index(Request $request)
     {
     	$search=trim($request->get('search'));
@@ -19,7 +22,7 @@ class UserController extends Controller
     	->join('Departments as de','pr.idDepartment','de.idDepartment')
     	->select('us.*','di.nameDistrict as district','pr.nameProvince as province','de.nameDepartment as department')
     	->whereRaw(" LOWER(\"us\".\"nameUser\") LIKE '%".strtolower($search)."%' OR (LOWER(\"us\".\"firstSurNameUser\") LIKE '%".strtolower($search)."%' OR LOWER(\"us\".\"secondSurNameUser\") LIKE '%".strtolower($search)."%') ")
-    	->paginate(4);
+    	->orderBy('us.idUser','asc')->paginate(5);
         $userrole = null;
         foreach ($users as $u) {
             $userrole[] =  collect(['idUser'=>$u->idUser,'roles'=>DB::table('UserRoles as ur')->where('idUser',$u->idUser)->join('Roles as r','ur.idRole','r.idRole')->select('r.idRole','r.nameRole','ur.statusUserRole')->orderBy('r.idRole','asc')->get(),'branch'=>DB::table('UserRoles')->where('idUser',$u->idUser)->select('idBranch')->first()]);

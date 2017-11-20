@@ -3,7 +3,7 @@
     <div class="modal-content">
       <form method="POST" action="{{action('RoleController@store')}}">
       {{ csrf_field() }}
-      <div class="modal-header" style="background-color: #1799AD;color: #FFFFFF" align="center">
+      <div class="modal-header" style="background-color: #f8ac59;color: #FFFFFF" align="center">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title">Agregar Nuevo Rol</h4>
       </div>
@@ -17,8 +17,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Guardar</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button>
+        <button type="submit" class="btn btn-warning"><i class="fa fa-save"></i> Guardar</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-arrow-left"></i> Cerrar</button>
       </div>
       </form>
     </div>
