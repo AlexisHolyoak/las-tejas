@@ -4,7 +4,7 @@
       <form method="POST" action="{{action('RoleController@update',$r->idRole)}}">
       {{ csrf_field() }}
       <input type="hidden" name="_method" value="PUT">
-      <div class="modal-header" style="background-color: #1799AD;color: #FFFFFF" align="center">
+      <div class="modal-header" style="background-color: #444444;color: #FFFFFF" align="center">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title">Editar Rol</h4>
       </div>
@@ -18,8 +18,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button>
+        <button type="submit" class="btn btn-info"><i class="fa fa-save"></i> Guardar</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-arrow-left"></i> Cerrar</button>
       </div>
       </form>
     </div>
