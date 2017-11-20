@@ -11,25 +11,37 @@
         {{ csrf_field() }}
         <select id="branch" name="branch" class="form-control">
           <?php foreach ($branches as $b): ?>
-            <?php if ($u['branch']->idBranch == ($b->idBranch)): ?>
-              <option value="<?=$b->idBranch?>" selected><?=$b->nameBranch?></option>
+            <?php if (empty($u['branch'])): ?>
+                <option value="<?=$b->idBranch?>"><?=$b->nameBranch?></option>
             <?php else: ?>
-              <option value="<?=$b->idBranch?>"><?=$b->nameBranch?></option>
-            <?php endif ?>            
+              <?php if ($u['branch']->idBranch == ($b->idBranch)): ?>
+                <option value="<?=$b->idBranch?>" selected><?=$b->nameBranch?></option>
+              <?php else: ?>
+                <option value="<?=$b->idBranch?>"><?=$b->nameBranch?></option>
+              <?php endif ?>
+            <?php endif ?>
           <?php endforeach ?>          
         </select><br>
         <label for="branch">Asigne los roles del Usuario</label><br>
-        <?php foreach ($u['roles'] as $r): ?>
-          <?php if ($r->statusUserRole==1): ?>
-            <div class="checkbox-inline">
-              <label><input name="role[]" type="checkbox" value="<?=$r->idRole?>" checked><?=$r->nameRole?></label>
-            </div>
-          <?php else: ?>
-            <div class="checkbox-inline">
-              <label><input name="role[]" type="checkbox" value="<?=$r->idRole?>"><?=$r->nameRole?></label>
-            </div>
-          <?php endif ?>
-        <?php endforeach ?>
+        <?php if (sizeof($u['roles'])<4): ?>
+          <?php foreach ($roles as $r): ?>
+              <div class="checkbox-inline">
+                <label><input name="role[]" type="checkbox" value="<?=$r->idRole?>"><?=$r->nameRole?></label>
+              </div>
+          <?php endforeach ?>
+        <?php else: ?>
+          <?php foreach ($u['roles'] as $r): ?>
+            <?php if ($r->statusUserRole==1): ?>
+              <div class="checkbox-inline">
+                <label><input name="role[]" type="checkbox" value="<?=$r->idRole?>" checked><?=$r->nameRole?></label>
+              </div>
+            <?php else: ?>
+              <div class="checkbox-inline">
+                <label><input name="role[]" type="checkbox" value="<?=$r->idRole?>"><?=$r->nameRole?></label>
+              </div>
+            <?php endif ?>
+          <?php endforeach ?>
+        <?php endif ?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
