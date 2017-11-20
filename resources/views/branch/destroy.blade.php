@@ -1,9 +1,9 @@
 <div class="modal fade" id="destroy-{{$b->idBranch}}" tabindex="-1" role="dialog">      
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header " style="background-color: #A54E4E;color: #FFFFFF" align="center">
+      <div class="modal-header " style="background-color: #ed5565;color: #FFFFFF" align="center">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Desactivar Rol</h4>
+        <h4 class="modal-title">Eliminar Sucursal</h4>
       </div>
       <form action="{{action('BranchController@destroy',$b->idBranch)}}" method="POST">
       <div class="modal-body">
@@ -12,8 +12,8 @@
         <input type="hidden" name="_method" value="DELETE">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button>
-        <button type="submit" class="btn btn-danger">Si, Eliminar</button>
+        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Si, Eliminar</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-arrow-left"></i> Cerrar</button>
       </div>
       </form>
     </div>

@@ -7,9 +7,12 @@ use lastejas\Role;
 
 class RoleController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function index()
     {
-        $roles = Role::all();
+        $roles = Role::orderBy('idRole','asc')->get();
         return view('role.index', compact('roles'));
     }
     public function store(Request $request)

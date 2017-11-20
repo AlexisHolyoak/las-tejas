@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Input;
 
 class BranchController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function index()
     {
     	$branches = DB::table('Branches')->paginate(3);

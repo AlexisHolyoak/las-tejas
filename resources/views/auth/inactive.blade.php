@@ -1,7 +1,7 @@
 <div class="modal fade" id="inactive-{{$u->idUser}}" tabindex="-1" role="dialog">      
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header " style="background-color: #A54E4E;color: #FFFFFF" align="center">
+      <div class="modal-header " style="background-color: #ed5565;color: #FFFFFF" align="center">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title">Desactivar Usuario</h4>
       </div>
