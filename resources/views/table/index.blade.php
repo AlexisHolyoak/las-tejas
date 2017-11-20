@@ -1,7 +1,6 @@
-@extends('layouts.admin')
-
-@section('content')
-<div class="container">
+@extends ('layouts.admin')
+@section ('content')
+<div class="container col-md-10 col-md-offset-1">
         <h3>
           Bienvenido a la seccion de administracion de mesas
           <a href="{{ route('table.create') }}" class="btn btn-primary pull-right">Crear Mesa</a>
