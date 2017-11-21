@@ -1,11 +1,12 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
-        <h3>
-          Bienvenido a la seccion de administracion de mesas
-          <a href="{{ route('table.create') }}" class="btn btn-primary pull-right">Crear Mesa</a>
-        </h3>
+<div class="container col-md-8 col-md-offset-2">
+  <div class="panel panel-primary animated fadeInUp">
+    <div class="panel-heading" align="center">
+          <h2>  Bienvenido a la seccion de administracion de mesas</h2>
+            <a href="{{ route('table.create') }}" class="btn btn-primary pull-right">Crear Mesa</a>
+    </div>
       </h2>
       <div class="table-responsive">
         <table class="table table-hover">
@@ -42,6 +43,8 @@
       </div>
       {{$tables->render()}}
 </div>
+</div>
+
 @foreach ($tables as $table)
   @include('table.destroy')
 @endforeach
