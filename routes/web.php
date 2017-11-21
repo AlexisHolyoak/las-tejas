@@ -26,9 +26,7 @@ Route::prefix('platillos')->group(function(){
     Route::post('/update/{id}', 'Dishes\Dishes@update');
     Route::post('/delete/{id}', 'Dishes\Dishes@delete');
 });
-Route::get('/mozo/',function(){
-  return view('mozo.mesas');
-});
+Route::resource('mozo','MozoController');
 Route::resource('branch', 'BranchController');
 Route::resource('auth', 'UserController');
 Route::post('/userrole/{id}', 'UserController@userrole');
