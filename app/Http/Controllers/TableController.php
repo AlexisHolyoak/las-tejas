@@ -15,7 +15,7 @@ class TableController extends Controller
     //
     public function __construct()
     {
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
     public function index(){
       $tables = DB::table('Tables as t')
