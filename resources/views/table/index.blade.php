@@ -1,13 +1,14 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container col-md-8 col-md-offset-2">
+<div class="container">
   <div class="panel panel-primary animated fadeInUp">
     <div class="panel-heading" align="center">
           <h2>  Bienvenido a la seccion de administracion de mesas</h2>
             <a href="{{ route('table.create') }}" class="btn btn-primary pull-right">Crear Mesa</a>
+          </h2>
     </div>
-      </h2>
+      <div class="panel-body">
       <div class="table-responsive">
         <table class="table table-hover">
             <thead>
@@ -40,6 +41,7 @@
           return confirm("¿Estas seguro que desa eliminar la mesa?");
         });
         </script>
+      </div>
       </div>
       {{$tables->render()}}
 </div>
