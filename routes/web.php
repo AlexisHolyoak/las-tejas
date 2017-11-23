@@ -26,9 +26,7 @@ Route::prefix('platillos')->group(function(){
     Route::post('/update/{id}', 'Dishes\Dishes@update');
     Route::post('/delete/{id}', 'Dishes\Dishes@delete');
 });
-Route::get('/mozo/',function(){
-  return view('mozo.mesas');
-});
+
 Route::resource('branch', 'BranchController');
 Route::resource('auth', 'UserController');
 Route::post('/userrole/{id}', 'UserController@userrole');
@@ -61,3 +59,5 @@ Route::prefix('reports')->group(function(){
     Route::get('/user/pdf/{id}', 'ReportController@reportUsersPdf');
     Route::get('/user/excel', 'ReportController@reportUsersXls');
 });
+Route::resource('mozo','MozoController', ['except'=>['index']]);
+Route::get('mozos/{id}',['as'=>'mozos.index', 'uses'=> 'MozoController@index']);
