@@ -67,3 +67,17 @@ Route::prefix('reports')->group(function(){
     Route::get('/orderdishes/pdf/{id}', 'ReportController@reportOrderDishesPdf');
     Route::get('/orderdishes/excel', 'ReportController@reportOrderDishesXls');
 });
+Route::prefix('mozo')->group(function () {
+
+    Route::get('/request/{id}', ['uses' => 'RequestController@index', 'as' => 'request.crear']);
+    Route::post('/request/store', 'RequestController@store');
+    Route::prefix('request')->group(function () {
+      Route::get('/order/{id}', ['uses' => 'OrderController@index', 'as' => 'request.order.index']);
+      Route::get('/order/create/{id}/', ['uses' => 'OrderController@create', 'as' => 'request.order.create']);
+      Route::post('/order/store', 'OrderController@store');
+      Route::post('/order/storedish', 'OrderController@storeDish');
+      Route::post('/order/showdish', 'OrderController@showDishes');
+    });
+
+});
+Route::get('/mozo/{id}', ['uses' => 'RequestController@list', 'as' => 'mozo']);
