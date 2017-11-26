@@ -17,6 +17,7 @@ class OrderController extends Controller
      */
     public function index($id)
     {
+        
         $idRequest = $id;
         $idmesa=DB::table('Requests as r')        
         ->select('r.idTable as ID')

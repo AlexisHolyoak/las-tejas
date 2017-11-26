@@ -4,6 +4,7 @@
         <h3>
           Bienvenido a la seccion de administración de mesas {{$user}}
           
+          
         </h3>
       </h2>
       <div class="table-responsive ">

@@ -12,6 +12,7 @@
 
   <input type="submit" value="Crear pedido" class="btn btn-primary pull-right" >
 
+
 </form>
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -35,7 +36,7 @@
                   <td  class="align-middle"><a href="{{route('request.order.index',$req-> ID)}}" class="btn btn-primary pull-right">Ver ordenes</a></td>
             </tr>
             @endforeach
-            <td  class="align-middle"><a href="{{route('mozo',$iduser-> USER)}}" class="btn btn-primary pull-right">Regresar</a></td>
+            <td  class="align-middle"><a href="{{route('mozo', $iduser->idUser )}}" class="btn btn-primary pull-right">Regresar</a></td>
           </tbody>
 
         </table>

@@ -12,10 +12,13 @@ class RequestController extends Controller
 
     public function index($id)
     {
+        
         $idmesa   = $id;
+        //$iduser= DB::table()
         $iduser= DB::table('Tables as t')
-        ->select('t.idUser as USER')
-        ->where('t.idTable',$idmesa)->first();        
+        ->where('t.idTable',$idmesa)->first();
+
+            
         $requests = DB::table('Requests as r')
             ->select('r.idRequest as ID', 'r.statusRequest as ESTADO', 'r.statusOfAttentionRequest as ESTADOATENCION')
             ->where('r.idTable', $idmesa)->get();
@@ -41,18 +44,19 @@ class RequestController extends Controller
     public function store()
     {
         $idmesa = Input::get('id');
-        $user   = DB::table('Requests')->where('idTable', '=', $idmesa)->first();
+        $iduser   = DB::table('Requests')->where('idTable', '=', $idmesa)->first();
         $req    = new Requests();
         $req->idTable                  = $idmesa;
         $req->statusRequest            = 'Pendiente';
         $req->statusOfAttentionRequest = '0';
-        $req->idUser = $user->idUser;
+        $req->idUser = $iduser->idUser;
         $req->save();
+
 
         $requests = DB::table('Requests as r')
             ->select('r.idRequest as ID', 'r.statusRequest as ESTADO', 'r.statusOfAttentionRequest as ESTADOATENCION')
             ->where('r.idTable', $idmesa)->get();
-        return view('mozo/request.index', compact(['requests', 'idmesa']));
+        return view('mozo/request.index', compact(['requests', 'idmesa','iduser']));
     }
     /**
      * Display the specified resource.

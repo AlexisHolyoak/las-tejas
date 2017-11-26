@@ -5,6 +5,7 @@
   <a href="{{route('request.order.create',$idRequest)}}" class="btn btn-success">Crear orden</a>
   <a href="{{route('request.crear',$idmesa->ID)}}" class="btn btn-success">Regresar</a>
   <div class="row">
+    
 
     <div class="col-lg-6">
       <table class="table table-hover">
