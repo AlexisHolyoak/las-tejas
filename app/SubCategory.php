@@ -9,8 +9,8 @@ class SubCategory extends Model
     public $timestamp = true;
     protected $primaryKey = 'idSubCategory';
     protected $table = 'SubCategories';
-    protected $fillable = [];
+    protected $fillable = ['idSubCategory','nameSubCategory','statusSubCategory'];
 
     protected $hidden = [];
- 
+
 }
