@@ -9,16 +9,17 @@ use Illuminate\Support\Facades\Input;
 
 class RequestController extends Controller
 {
-
+    public function __construct(){
+      $this->middleware(['auth','role:Administrador,Mozo']);
+    }
     public function index($id)
     {
-        
         $idmesa   = $id;
         //$iduser= DB::table()
         $iduser= DB::table('Tables as t')
         ->where('t.idTable',$idmesa)->first();
 
-            
+
         $requests = DB::table('Requests as r')
             ->select('r.idRequest as ID', 'r.statusRequest as ESTADO', 'r.statusOfAttentionRequest as ESTADOATENCION')
             ->where('r.idTable', $idmesa)->get();
@@ -32,7 +33,7 @@ class RequestController extends Controller
      */
     public function crear($id)
     {
-        
+
 
     }
     /**

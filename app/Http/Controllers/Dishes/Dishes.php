@@ -15,9 +15,9 @@ use DB;
 class Dishes extends Controller
 {
     public function __construct(){
-        $this->middleware('auth');
+        $this->middleware(['auth','role:Administrador,Mozo']);
     }
-    
+
     public function index(Request $request) {
         $filter = $request->filterCombo != 0? $request->filterCombo : null;
         $data['dataView'] = dishesModel::GetDataDish($filter);

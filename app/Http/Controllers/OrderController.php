@@ -15,11 +15,13 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(){
+      $this->middleware(['auth','role:Administrador,Mozo']);
+    }
     public function index($id)
     {
-        
         $idRequest = $id;
-        $idmesa=DB::table('Requests as r')        
+        $idmesa=DB::table('Requests as r')
         ->select('r.idTable as ID')
         ->where('idRequest',$id)->first();
         $orders = DB::table('Orders as o')->where('o.idRequest', '=', $idRequest)->get();
