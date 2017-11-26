@@ -81,3 +81,6 @@ Route::prefix('mozo')->group(function () {
 
 });
 Route::get('/mozo/{id}', ['uses' => 'RequestController@list', 'as' => 'mozo']);
+Route::get('/bienvenida', function () {
+    return view('bienvenida');
+});

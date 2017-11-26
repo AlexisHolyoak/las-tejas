@@ -76,7 +76,7 @@
 	@include('auth.show')
 	@include('auth.inactive')
 	@include('auth.active')
-	
+
 @endforeach
 <?php if (sizeof($userrole)>0): ?>
 	@foreach($userrole as $u)

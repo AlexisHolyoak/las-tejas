@@ -58,11 +58,13 @@
                         </div>
                     </li>
                     <li>
-                        <a href="{{route('auth.index')}}"><i class="fa fa-home"></i> <span class="nav-label">Pagina Principal</span>  </a>
+                        <a href="{{url('bienvenida')}}"><i class="fa fa-home"></i> <span class="nav-label">Pagina Principal</span>  </a>
                     </li>
+                    @if(auth()->user()->hasRole(['Administrador']))
                     <li>
                         <a href="{{ url('branch') }}"><i class="fa fa-map-marker"></i><span class="nav-label">Sucursales</span></a>
                     </li>
+                    @endif
                     <li>
                         <a href="{{ route('mozo',Auth::user()->idUser) }}"><i class="fa fa-child"></i><span class="nav-label">Atender Mesas</span></a>
                     </li>
@@ -160,23 +162,5 @@
     <script src="{{ asset('js/plugins/toastr/toastr.min.js') }}"></script>
 
     @stack('script')
-
-    <script>
-        $(document).ready(function() {
-            setTimeout(function() {
-                toastr.options = {
-                    closeButton: true,
-                    progressBar: true,
-                    showMethod: 'slideDown',
-                    timeOut: 4000
-                };
-                toastr.success('Sistema de Restaurante', 'Bienvenido a LAS TEJAS');
-
-            }, 1300);
-            /*$('#Usuarios').click(function(){
-                $('#acceso').addClass('active');
-            });*/
-        });
-    </script>
 </body>
 </html>

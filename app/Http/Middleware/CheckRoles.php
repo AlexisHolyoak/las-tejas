@@ -12,6 +12,6 @@ class CheckRoles
         if(auth()->user()->hasRole($roles)){
             return $next($request);
         }
-        return redirect('/');
+        return redirect('/bienvenida');
     }
 }
