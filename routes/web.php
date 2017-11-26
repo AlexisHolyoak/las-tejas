@@ -60,4 +60,10 @@ Route::prefix('reports')->group(function(){
     Route::get('/', 'ReportController@index');
     Route::get('/user/pdf/{id}', 'ReportController@reportUsersPdf');
     Route::get('/user/excel', 'ReportController@reportUsersXls');
+    Route::get('/dishes/pdf/{id}', 'ReportController@reportDishesPdf');
+    Route::get('/dishes/excel', 'ReportController@reportDishesXls');
+    Route::get('/supplies/pdf/{id}', 'ReportController@reportSuppliesPdf');
+    Route::get('/supplies/excel', 'ReportController@reportSuppliesXls');
+    Route::get('/orderdishes/pdf/{id}', 'ReportController@reportOrderDishesPdf');
+    Route::get('/orderdishes/excel', 'ReportController@reportOrderDishesXls');
 });

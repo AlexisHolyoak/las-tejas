@@ -73,8 +73,7 @@
                     <li>
                         <a href="#"><i class="fa fa-file"></i> <span class="nav-label">Reportes </span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="{{ url('reports') }}">Usuario</a></li>
-                            <li><a href="#">Ventas</a></li>
+                            <li><a href="{{ url('reports') }}">Reportes Generales</a></li>
                         </ul>
                     </li>
                     <li id="acceso">
