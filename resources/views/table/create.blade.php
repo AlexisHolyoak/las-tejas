@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
+<div class="container col-md-12">
   <div class="panel panel-primary animated fadeInUp">
     <div class="panel-heading" align="center">
       Registrar Nueva Mesa
