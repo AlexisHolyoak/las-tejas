@@ -15,7 +15,7 @@ class TableController extends Controller
     //
     public function __construct()
     {
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
     public function index(){
       $tables = DB::table('Tables as t')
@@ -41,8 +41,8 @@ class TableController extends Controller
     }
     public function store(Request $request){
       $this->validate($request,[
-          'numberTable' => 'required',
-          'numberOfChairsTable' => 'required',
+          'numberTable' => 'required|integer|min:0',
+          'numberOfChairsTable' => 'required|integer|min:0',
           'statusOfAttentionTable'=>'required',
           'idBranch'=> 'required',
           'idUser'=> 'required'

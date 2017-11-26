@@ -2,11 +2,13 @@
 
 @section('content')
 <div class="container">
-        <h3>
-          Bienvenido a la seccion de administracion de mesas
-          <a href="{{ route('table.create') }}" class="btn btn-primary pull-right">Crear Mesa</a>
-        </h3>
-      </h2>
+  <div class="panel panel-primary animated fadeInUp">
+    <div class="panel-heading" align="center">
+          <h2>  Bienvenido a la seccion de administracion de mesas</h2>
+            <a href="{{ route('table.create') }}" class="btn btn-primary pull-right">Crear Mesa</a>
+          </h2>
+    </div>
+  <div class="panel-body">
       <div class="table-responsive">
         <table class="table table-hover">
             <thead>
@@ -40,8 +42,11 @@
         });
         </script>
       </div>
+    <div class="panel-body">
       {{$tables->render()}}
 </div>
+</div>
+
 @foreach ($tables as $table)
   @include('table.destroy')
 @endforeach

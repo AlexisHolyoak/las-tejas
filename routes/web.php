@@ -14,9 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/bienvenida', function () {
-    return view('bienvenida');
-});
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/ordenes/',function(){
@@ -63,4 +60,27 @@ Route::prefix('reports')->group(function(){
     Route::get('/', 'ReportController@index');
     Route::get('/user/pdf/{id}', 'ReportController@reportUsersPdf');
     Route::get('/user/excel', 'ReportController@reportUsersXls');
+    Route::get('/dishes/pdf/{id}', 'ReportController@reportDishesPdf');
+    Route::get('/dishes/excel', 'ReportController@reportDishesXls');
+    Route::get('/supplies/pdf/{id}', 'ReportController@reportSuppliesPdf');
+    Route::get('/supplies/excel', 'ReportController@reportSuppliesXls');
+    Route::get('/orderdishes/pdf/{id}', 'ReportController@reportOrderDishesPdf');
+    Route::get('/orderdishes/excel', 'ReportController@reportOrderDishesXls');
+});
+Route::prefix('mozo')->group(function () {
+
+    Route::get('/request/{id}', ['uses' => 'RequestController@index', 'as' => 'request.crear']);
+    Route::post('/request/store', 'RequestController@store');
+    Route::prefix('request')->group(function () {
+      Route::get('/order/{id}', ['uses' => 'OrderController@index', 'as' => 'request.order.index']);
+      Route::get('/order/create/{id}/', ['uses' => 'OrderController@create', 'as' => 'request.order.create']);
+      Route::post('/order/store', 'OrderController@store');
+      Route::post('/order/storedish', 'OrderController@storeDish');
+      Route::post('/order/showdish', 'OrderController@showDishes');
+    });
+
+});
+Route::get('/mozo/{id}', ['uses' => 'RequestController@list', 'as' => 'mozo']);
+Route::get('/bienvenida', function () {
+    return view('bienvenida');
 });

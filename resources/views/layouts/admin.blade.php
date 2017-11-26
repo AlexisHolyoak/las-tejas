@@ -66,6 +66,12 @@
                     </li>
                     @endif
                     <li>
+                        <a href="{{ route('mozo',Auth::user()->idUser) }}"><i class="fa fa-child"></i><span class="nav-label">Atender Mesas</span></a>
+                    </li>
+                    <li>
+                        <a href="{{ route('table.index')}}"><i class="fa fa-cube"></i><span class="nav-label">Mesas</span></a>
+                    </li>
+                    <li>
                         <a href="#"><img src="{{asset('images/add-comida.svg')}}" height="20" width="20"></i> <span class="nav-label"> Cocinero </span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li><a href="{{ url('platillos') }}">Platillos</a></li>
@@ -75,8 +81,7 @@
                     <li>
                         <a href="#"><i class="fa fa-file"></i> <span class="nav-label">Reportes </span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="{{ url('reports') }}">Usuario</a></li>
-                            <li><a href="#">Ventas</a></li>
+                            <li><a href="{{ url('reports') }}">Reportes Generales</a></li>
                         </ul>
                     </li>
                     <li id="acceso">
