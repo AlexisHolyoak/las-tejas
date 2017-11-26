@@ -64,6 +64,9 @@
                         <a href="{{ url('branch') }}"><i class="fa fa-map-marker"></i><span class="nav-label">Sucursales</span></a>
                     </li>
                     <li>
+                        <a href="{{ route('mozo',Auth::user()->idUser) }}"><i class="fa fa-map-marker"></i><span class="nav-label">Atender Mesas</span></a>
+                    </li>
+                    <li>
                         <a href="#"><img src="{{asset('images/add-comida.svg')}}" height="20" width="20"></i> <span class="nav-label"> Cocinero </span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li><a href="{{ url('platillos') }}">Platillos</a></li>
