@@ -36,7 +36,7 @@
         <td>{{ $dish->nameDish }}</td>
         <td>S/ {{ $dish->priceDish }}</td>
         <td><input type="checkbox" class="dog"></td>
-        <td><input type="number" disabled="disabled" class="cant"></td>
+        <td><input type="number" disabled="disabled" class="cant" min="1" integer id="abc"></td>
       </tr>
       @endforeach
 </tbody>
@@ -48,7 +48,15 @@
 </div>
 
 <script type="text/javascript">
+
     $(document).ready(function(){
+        $('#abc').keyup(function (){
+            this.value=(this.value + '').replace(/[^1-9]/g,'');
+        });
+
+
+
+
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
