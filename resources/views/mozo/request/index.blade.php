@@ -12,6 +12,7 @@
 
   <input type="submit" value="Crear pedido" class="btn btn-primary pull-right" >
 
+
 </form>
   <div class="panel panel-default">
     <div class="panel-heading">

@@ -12,6 +12,7 @@ class RequestController extends Controller
 
     public function index($id)
     {
+        
         $idmesa   = $id;
         //$iduser= DB::table()
         $iduser= DB::table('Tables as t')
