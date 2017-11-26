@@ -12,10 +12,10 @@ developed by: Alexis Peralta Holyoak
 */
 class TableController extends Controller
 {
-    //
+
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','role:Administrador']);
     }
     public function index(){
       $tables = DB::table('Tables as t')

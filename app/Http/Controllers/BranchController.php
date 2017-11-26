@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Input;
 class BranchController extends Controller
 {
     public function __construct(){
-        $this->middleware(['auth','role:Mozo,Administrador']);
+        $this->middleware(['auth','role:Administrador']);
     }
     public function index()
     {

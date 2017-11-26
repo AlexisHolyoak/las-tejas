@@ -65,12 +65,17 @@
                         <a href="{{ url('branch') }}"><i class="fa fa-map-marker"></i><span class="nav-label">Sucursales</span></a>
                     </li>
                     @endif
+                    @if(auth()->user()->hasRole(['Administrador','Mozo']))
                     <li>
                         <a href="{{ route('mozo',Auth::user()->idUser) }}"><i class="fa fa-child"></i><span class="nav-label">Atender Mesas</span></a>
                     </li>
+                    @endif
+                    @if(auth()->user()->hasRole(['Administrador','Mozo']))
                     <li>
                         <a href="{{ route('table.index')}}"><i class="fa fa-cube"></i><span class="nav-label">Mesas</span></a>
                     </li>
+                    @endif
+                    @if(auth()->user()->hasRole(['Administrador','Mozo']))
                     <li>
                         <a href="#"><img src="{{asset('images/add-comida.svg')}}" height="20" width="20"></i> <span class="nav-label"> Cocinero </span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -78,12 +83,16 @@
                             <li><a href="#">Ordenes</a></li>
                         </ul>
                     </li>
+                    @endif
+                    @if(auth()->user()->hasRole(['Administrador']))
                     <li>
                         <a href="#"><i class="fa fa-file"></i> <span class="nav-label">Reportes </span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li><a href="{{ url('reports') }}">Reportes Generales</a></li>
                         </ul>
                     </li>
+                    @endif
+                    @if(auth()->user()->hasRole(['Administrador']))
                     <li id="acceso">
                         <a href="#"><i class="fa fa-user-circle"></i> <span class="nav-label">Acceso</span>  <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
@@ -91,6 +100,7 @@
                             <li><a id="Roles" href="{{ url('role') }}">Roles</a></li>
                         </ul>
                     </li>
+                    @endif
                 </ul>
             </div>
         </nav>
