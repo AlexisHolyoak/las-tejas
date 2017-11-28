@@ -36,7 +36,7 @@
         <td>{{ $dish->nameDish }}</td>
         <td>S/ {{ $dish->priceDish }}</td>
         <td><input type="checkbox" class="dog"></td>
-        <td><input type="number" disabled="disabled" class="cant" min="1" integer id="abc"></td>
+        <td><input type="number" disabled="disabled" class="cant" min="1" integer id="abc" max="100"></td>
       </tr>
       @endforeach
 </tbody>
