@@ -16,13 +16,14 @@ class RequestController extends Controller
     {
         $idmesa   = $id;
         //$iduser= DB::table()
-        $iduser= DB::table('Tables as t')
-        ->where('t.idTable',$idmesa)->first();
 
+        $iduser= DB::table('Tables as t')
+        ->where('t.idTable',$idmesa)->first();      
 
         $requests = DB::table('Requests as r')
             ->select('r.idRequest as ID', 'r.statusRequest as ESTADO', 'r.statusOfAttentionRequest as ESTADOATENCION')
             ->where('r.idTable', $idmesa)->get();
+
         return view('mozo/request.index', compact(['requests', 'idmesa','iduser']));
     }
 
@@ -45,12 +46,15 @@ class RequestController extends Controller
     public function store()
     {
         $idmesa = Input::get('id');
-        $iduser   = DB::table('Requests')->where('idTable', '=', $idmesa)->first();
+
+        $iduser   = DB::table('Tables')->where('idTable', '=', $idmesa)->first();
+        $id=$iduser->idUser;
+        
         $req    = new Requests();
         $req->idTable                  = $idmesa;
         $req->statusRequest            = 'Pendiente';
         $req->statusOfAttentionRequest = '0';
-        $req->idUser = $iduser->idUser;
+        $req->idUser = $id;
         $req->save();
 
 
