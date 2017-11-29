@@ -63,8 +63,10 @@ $(document).ready(function(){
 });
 
 function validateData(data){
-    var patron = /^[a-zA-Z\s]*$/;
+    var patron = /^[a-zA-ZáéíúóÁÉÍÓÚ\s]*$/;
     if(!parseFloat(data.price) || data.name.search(patron)){
+        return false;
+    }else if(data.price < 1){
         return false;
     }
 
