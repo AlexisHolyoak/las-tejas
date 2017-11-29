@@ -22,7 +22,7 @@ class RequestController extends Controller
 
         $requests = DB::table('Requests as r')
             ->select('r.idRequest as ID', 'r.statusRequest as ESTADO', 'r.statusOfAttentionRequest as ESTADOATENCION')
-            ->where('r.idTable', $idmesa)->get();
+            ->where('r.idTable', $idmesa)->orderBy('r.idRequest', 'desc')->get();
         return view('mozo/request.index', compact(['requests', 'idmesa','iduser']));
     }
 
@@ -56,7 +56,7 @@ class RequestController extends Controller
 
         $requests = DB::table('Requests as r')
             ->select('r.idRequest as ID', 'r.statusRequest as ESTADO', 'r.statusOfAttentionRequest as ESTADOATENCION')
-            ->where('r.idTable', $idmesa)->get();
+            ->where('r.idTable', $idmesa)->orderBy('idRequest', 'desc')->get();
         return view('mozo/request.index', compact(['requests', 'idmesa','iduser']));
     }
     /**

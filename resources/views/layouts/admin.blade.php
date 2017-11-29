@@ -70,12 +70,12 @@
                         <a href="{{ route('mozo',Auth::user()->idUser) }}"><i class="fa fa-child"></i><span class="nav-label">Atender Mesas</span></a>
                     </li>
                     @endif
-                    @if(auth()->user()->hasRole(['Administrador','Mozo']))
+                    @if(auth()->user()->hasRole(['Administrador']))
                     <li>
                         <a href="{{ route('table.index')}}"><i class="fa fa-cube"></i><span class="nav-label">Mesas</span></a>
                     </li>
                     @endif
-                    @if(auth()->user()->hasRole(['Administrador','Mozo']))
+                    @if(auth()->user()->hasRole(['Administrador']))
                     <li>
                         <a href="#"><img src="{{asset('images/add-comida.svg')}}" height="20" width="20"></i> <span class="nav-label"> Cocinero </span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">

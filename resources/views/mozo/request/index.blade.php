@@ -1,60 +1,69 @@
 @extends('layouts.admin')
-
 @section('content')
-<div class="container col-sm-12" >
-<form action="{{ URL::to('mozo/request/store') }}" method="POST" id="frm-insert">
-{{csrf_field()}}
+<div class="container col-md-12" >
+  <div class="panel panel-primary animated fadeInUp">
+    <div class="panel-heading" align="center">
+      <h2>
+        Solicitudes de la Mesa {{$idmesa}}
+      </h2>
+      <form action="{{ URL::to('mozo/request/store') }}" method="POST" id="frm-insert">
+        {{csrf_field()}}
         <div class="form-group" hidden>
-            <div class="col-md-6">
-                <input type="text" name="id" id="inp" class="form-control" value="{{ $idmesa }}">
-            </div>
+          <div class="col-md-6">
+            <input type="text" name="id" id="inp" class="form-control" value="{{ $idmesa }}">
+          </div>
         </div>
 
-  <input type="submit" value="Crear pedido" class="btn btn-primary pull-right" >
-
-
-</form>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      Pedidos de la Mesa {{$idmesa}}
-    </div>
-    <div class="panel-body">
-      <table class="table table-hover">
+      </div>
+      <div class="table-responsive ">
+        <table class="table table-hover">
           <thead>
-              <tr>
-                <th>Id Pedido</th>
-                <th>Estado de pedido</th>
-                <th>Estado de Atencion</th>
-              </tr>
-            </thead>
+            <tr>
+              <th class="text-center">Id Pedido</th>
+              <th class="text-center">Estado de pedido</th>
+              
+            </tr>
+          </thead>
           <tbody>
             @foreach($requests as $req)
             <tr>
-                  <td  class="align-middle">{{$req-> ID}}</td>
-                  <td  class="align-middle">{{$req-> ESTADO}}</td>
-                  <td  class="align-middle">{{$req-> ESTADOATENCION}}</td>
-                  <td  class="align-middle"><a href="{{route('request.order.index',$req-> ID)}}" class="btn btn-primary pull-right">Ver ordenes</a></td>
+              <td  align="middle">{{$req-> ID}}</td>
+              <td  align="middle">{{$req-> ESTADO}}</td>
+              
+              <td   align="middle"><a href="{{route('request.order.index',$req-> ID)}}" class="btn btn-primary">Ver Ordenes</a></td>
             </tr>
             @endforeach
-            <td  class="align-middle"><a href="{{route('mozo', $iduser->idUser )}}" class="btn btn-primary pull-right">Regresar</a></td>
-          </tbody>
-
-        </table>
+          </tbody> <br>                                    
+                                                
+      </table>
+      <div align="center">            
+            <input id="crear" style="margin-right: 20px;" type="submit" value="Crear pedido" align="center" class="btn btn-warning pull-right" >
+            <a id="back" style="margin-left: 20px;" href="{{route('mozo', $iduser->idUser )}}" class="btn btn-danger pull-left ">Regresar</a><br>&nbsp
+          </div></form>  
     </div>
   </div>
 
 </div>
-
 </div>
-<script type="text/javascript">
-    $(document).ready(function(){
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        
 
+<script type="text/javascript">
+$(document).ready(function(){
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
+  $("#crear").on("click",function(e){
+    $('#crear').attr("disabled", true);
+    $('#back').attr("disabled", true);
+    
+  });
+  $("#back").on("click",function(e){
+    $('#crear').attr("disabled", true);
+    $('#back').attr("disabled", true);
+    
+  });
+  
 });
 </script>
 @endsection
