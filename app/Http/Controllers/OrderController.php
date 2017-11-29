@@ -24,7 +24,7 @@ class OrderController extends Controller
         $idmesa=DB::table('Requests as r')
         ->select('r.idTable as ID')
         ->where('idRequest',$id)->first();
-        $orders = DB::table('Orders as o')->where('o.idRequest', '=', $idRequest)->get();
+        $orders = DB::table('Orders as o')->where('o.idRequest', '=', $idRequest)->orderBy('o.idOrder', 'desc')->get();
         return view('mozo.request.order.index', compact(['orders', 'idRequest','idmesa']));
     }
 
@@ -43,7 +43,7 @@ class OrderController extends Controller
         $order->idRequest   = $idRequest;
         $order->save();
 
-        $orders                = Orders::orderBy('created_at', 'desc')->get();
+        $orders                = Orders::orderBy('idOrden', 'desc')->get();
         return response($orders->all());
     }
     public function storeDish()
@@ -63,7 +63,7 @@ class OrderController extends Controller
     public function showDishes(){
         $idorder = Input::get('id');
         $dishes = DB::table('Orders as o')
-        ->join('OrderDishes as od','o.idOrder','od.idOrder')
+         ->join('OrderDishes as od','o.idOrder','od.idOrder')
         ->join('Dishes as d','od.idDish','d.idDish')
         ->select('d.nameDish as NOMBRE','d.priceDish as PRECIO','od.quantity as CANTIDAD')
         ->where('o.idOrder', '=', $idorder)->get();
