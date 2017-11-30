@@ -4,7 +4,7 @@
   <div class="panel panel-primary animated fadeInUp">
     <div class="panel-heading" align="center">
       <h2>
-        Solicitudes de la Mesa {{$idmesa}}
+        Solicitudes de la Mesa
       </h2>
       <form action="{{ URL::to('mozo/request/store') }}" method="POST" id="frm-insert">
         {{csrf_field()}}
@@ -53,11 +53,7 @@ $(document).ready(function(){
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
   });
-  $("#crear").on("click",function(e){
-    $('#crear').attr("disabled", true);
-    $('#back').attr("disabled", true);
-    
-  });
+  
   $("#back").on("click",function(e){
     $('#crear').attr("disabled", true);
     $('#back').attr("disabled", true);

@@ -140,7 +140,7 @@
           @endforeach
         </tbody>
       </table>
-      <input disabled type="button" id="crear" value="Crear" class="btn btn-warning pull-right">
+      <input type="button" id="crear" value="Crear" class="btn btn-warning pull-right">
       <a href="{{route('request.order.index', $idRequest)}}" class="btn btn-danger" id="llam" >Cancelar</a>
       <br>
     </div>  
@@ -185,12 +185,12 @@
       if(this.checked){
         $inpt.prop('disabled',false);
         $inpt.val(1);
-        $('#crear').attr("disabled", false);
+        
         
       }else{
         $inpt.prop('disabled',true);
         $inpt.val('');
-        $('#crear').attr("disabled", true);
+        
         
       }
     });
