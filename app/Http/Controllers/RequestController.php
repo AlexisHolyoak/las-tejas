@@ -45,7 +45,7 @@ class RequestController extends Controller
     public function store()
     {
         $idmesa = Input::get('id');
-        $iduser   = DB::table('Requests')->where('idTable', '=', $idmesa)->first();
+        $iduser   = DB::table('Tables as t')->where('t.idTable', '=', $idmesa)->first();
         $req    = new Requests();
         $req->idTable                  = $idmesa;
         $req->statusRequest            = 'Pendiente';
