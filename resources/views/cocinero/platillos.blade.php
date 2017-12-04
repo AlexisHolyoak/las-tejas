@@ -81,11 +81,12 @@
 											<?php endforeach; ?>
 									</select>
 									<div class="form-control">
+										<label for="imagen">Imagen</label>
 										<label class="custom-file">
 										  <input type="file" id="file" name="imagen" class="custom-file-input">
 										  <span class="custom-file-control"></span>
 										</label>
-									</div>									
+									</div>
 									<div class="alertMessage" style="display:none">
 										<br>
 										<label  class="text-danger">Ingrese los datos correctamente</label>
