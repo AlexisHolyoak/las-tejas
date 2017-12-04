@@ -80,8 +80,8 @@
 													<option value="{{ $value->idSubType }}">{{ $value->nameSubType }}</option>
 											<?php endforeach; ?>
 									</select>
+									<label for="imagen">Imagen</label>
 									<div class="form-control">
-										<label for="imagen">Imagen</label>
 										<label class="custom-file">
 										  <input type="file" id="file" name="imagen" class="custom-file-input">
 										  <span class="custom-file-control"></span>
