@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="col-md-10 col-md-offset-1">            
+<div class="col-md-10 col-md-offset-1">
     <div class="panel panel-primary animated fadeInRight">
         <div class="panel-heading" align="center">
             <h2>Crear nuevo Usuario</h2>
@@ -11,17 +11,17 @@
                 {{ csrf_field() }}
                 <div class="form-group col-md-4" align="center">
                     <label for="nameUser">Nombre de Usuario</label>
-                    <input type="text" name="nameUser" class="form-control" placeholder="Nombre del Usuario..." value="{{old('nameUser')}}">
+                    <input type="text" name="nameUser" class="form-control" placeholder="Nombre del Usuario..." value="{{old('nameUser')}}" max="50" onkeydown="return alphaOnly(event);">
                     <p class="label label-danger">{{$errors->first('nameUser')}}</p>
                 </div>
                 <div class="form-group col-md-4" align="center">
                     <label for="firstSurNameUser">Apellido Paterno</label>
-                    <input type="text" name="firstSurNameUser" class="form-control" placeholder="Apellido Paterno..." value="{{old('firstSurNameUser')}}">
+                    <input type="text" name="firstSurNameUser" class="form-control" placeholder="Apellido Paterno..." value="{{old('firstSurNameUser')}}" onkeydown="return alphaOnly(event);">
                     <p class="label label-danger">{{$errors->first('firstSurNameUser')}}</p>
                 </div>
                 <div class="form-group col-md-4" align="center">
                     <label for="secondSurNameUser">Apellido Materno</label>
-                    <input type="text" name="secondSurNameUser" class="form-control" placeholder="Apellido Materno..." value="{{old('secondSurNameUser')}}">
+                    <input type="text" name="secondSurNameUser" class="form-control" placeholder="Apellido Materno..." value="{{old('secondSurNameUser')}}" onkeydown="return alphaOnly(event);">
                     <p class="label label-danger">{{$errors->first('secondSurNameUser')}}</p>
                 </div>
                 <div class="form-group col-md-4" align="center">
@@ -35,12 +35,12 @@
                 </div>
                 <div class="form-group col-md-4" align="center">
                     <label for="dniUser">DNI</label>
-                    <input type="text" maxlength="8" name="dniUser" class="form-control" placeholder="# DNI del Usuario..." value="{{old('dniUser')}}">
+                    <input type="text" maxlength="8" name="dniUser" class="form-control" placeholder="# DNI del Usuario..." value="{{old('dniUser')}}" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
                     <p class="label label-danger">{{$errors->first('dniUser')}}</p>
                 </div>
                 <div class="form-group col-md-4" align="center">
                     <label for="rucUser">RUC</label>
-                    <input type="text" name="rucUser" class="form-control" placeholder="# RUC del Usuario..." value="{{old('rucUser')}}" maxlength="11">
+                    <input type="text" name="rucUser" class="form-control" placeholder="# RUC del Usuario..." value="{{old('rucUser')}}" maxlength="11" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
                     <p class="label label-danger">{{$errors->first('rucUser')}}</p>
                 </div>
                 <div class="form-group col-md-4" align="center">
@@ -50,12 +50,12 @@
                 </div>
                 <div class="form-group col-md-4" align="center">
                     <label for="phoneUser">Telefono</label>
-                    <input type="text" name="phoneUser" class="form-control" placeholder="# Teléfono del Usuario..." value="{{old('phoneUser')}}">
+                    <input type="text" name="phoneUser" class="form-control" placeholder="# Teléfono del Usuario..." value="{{old('phoneUser')}}" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
                     <p class="label label-danger">{{$errors->first('phoneUser')}}</p>
                 </div>
                 <div class="form-group col-md-4" align="center">
                     <label for="cellPhoneUser">Celular</label>
-                    <input type="text" name="cellPhoneUser" class="form-control" placeholder="# Celular del Usuario..." value="{{old('cellPhoneUser')}}">
+                    <input type="text" name="cellPhoneUser" class="form-control" placeholder="# Celular del Usuario..." value="{{old('cellPhoneUser')}}" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
                     <p class="label label-danger">{{$errors->first('cellPhoneUser')}}</p>
                 </div>
                 <div class="form-group col-md-4" align="center">
@@ -70,7 +70,7 @@
                 </div>
                 <div class="form-group col-md-4" align="center">
                     <label for="nickNameUser">Usuario</label>
-                    <input type="text" name="nickNameUser" class="form-control" placeholder="Usuario..." value="{{old('nickNameUser')}}">
+                    <input type="text" name="nickNameUser" class="form-control" placeholder="Usuario..." value="{{old('nickNameUser')}}" onkeydown="return alphaOnly(event);">
                     <p class="label label-danger">{{$errors->first('nickNameUser')}}</p>
                 </div>
                 <div class="form-group col-md-4" align="center">
@@ -141,6 +141,10 @@ $('#province').change(function(e){
         });
     });
 });
+function alphaOnly(event) {
+  var key = event.keyCode;`enter code here`
+  return ((key >= 65 && key <= 90) || key == 8);
+};
 </script>
 @endpush
 @stop

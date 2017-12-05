@@ -28,7 +28,9 @@
             <?php foreach ($dataView as $key => $value):?>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 product">
               <div class="contact-box center-version">
-                <img alt="image" class="img-circle" src="{{asset('files/productos/'.$value->imageDish)}}" style="height:150px;width:150px;">
+								<object type="image/png" data="http://stackoverflow.com/does-not-exist.png">
+									<img alt="image" class="img-circle" src="{{asset('files/productos/'.$value->imageDish)}}" style="height:150px;width:150px;">
+								</object>
                 <h4><strong>{{ $value->nameDish }}</strong></h4>
                 <address>
                   <strong>Categoría: </strong>{{ $value->nameSubCategory }}<br>
@@ -63,10 +65,10 @@
 							<div class="modal-body dish_add">
 									<input type="hidden" name="_token" value="{{csrf_token()}}">
 									<label for="nombre">Nombre</label>
-									<input type="text" name="dishName" class="form-control" placeholder="Nombre del producto...">
+									<input type="text" name="dishName" class="form-control" placeholder="Nombre del producto..." onkeydown="return alphaOnly(event);">
 
 									<label for="precio">Precio</label>
-									<input type="text" name="dishPrice" class="form-control" placeholder="Precio del producto...">
+									<input type="number" name="dishPrice" class="form-control" placeholder="Precio del producto...">
 
 									<label for="descripcion">Categoría</label>
 									<select name="categoryId" class="form-control">
@@ -80,8 +82,13 @@
 													<option value="{{ $value->idSubType }}">{{ $value->nameSubType }}</option>
 											<?php endforeach; ?>
 									</select>
-									<label for="imagen">Imágen</label>
-									<input type="file" name="imagen" class="form-control">
+									<label for="imagen">Imagen</label>
+									<div class="form-control">
+										<label class="custom-file">
+										  <input type="file" id="file" name="imagen" class="custom-file-input">
+										  <span class="custom-file-control"></span>
+										</label>
+									</div>
 									<div class="alertMessage" style="display:none">
 										<br>
 										<label  class="text-danger">Ingrese los datos correctamente</label>
@@ -106,9 +113,9 @@
 						<div class="modal-body dish_edit">
 							<input type="hidden" name="_token" value="{{csrf_token()}}">
 							<label for="nombre">Nombre</label>
-							<input type="text" name="dishName" class="form-control" placeholder="Nombre del producto...">
+							<input type="text" name="dishName" class="form-control" placeholder="Nombre del producto..." maxlength="50" onkeydown="return alphaOnly(event);" required>
 							<label for="precio">Precio</label>
-							<input type="text" name="dishPrice" class="form-control" placeholder="Precio del producto...">
+							<input type="number" name="dishPrice" class="form-control" placeholder="Precio del producto..." required maxlength="4">
 							<label for="descripcion">Categoría</label>
 							<select name="categoryId" class="form-control">
 								<?php foreach ($dataCombo as $key => $value): ?>
@@ -121,8 +128,13 @@
 										<option value="{{ $value->idSubType }}">{{ $value->nameSubType }}</option>
 								<?php endforeach;?>
 							</select>
-							<label for="imagen">Imágen</label>
-							<input type="file" name="imagen" class="form-control">
+							<label for="imagen">Imagen</label>
+							<div class="form-control">
+								<label class="custom-file">
+									<input type="file" id="file" name="imagen" class="custom-file-input">
+									<span class="custom-file-control"></span>
+								</label>
+							</div>
 							<div class="alertMessage" style="display:none">
 										<br>
 							  <label  class="text-danger">Ingrese los datos correctamente</label>
@@ -159,4 +171,10 @@
 		  </div>
 		</div>
 <script type="text/javascript" src="{{asset('js/cocinero/platillos/dataAjax.js')}}"></script>
+<script type="text/javascript">
+function alphaOnly(event) {
+	var key = event.keyCode;`enter code here`
+	return ((key >= 65 && key <= 90) || key == 8);
+};
+</script>
 @endsection

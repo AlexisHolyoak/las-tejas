@@ -14,7 +14,7 @@
         <label>Tipo de Negocio</label>
         <input type="text" class="form-control" name="kindOfBussinessBranch" required placeholder="Tipo de Negocio..." required value="{{$b->kindOfBussinessBranch}}">
         <label>RUC de la Sucursal</label>
-        <input type="text" class="form-control" name="rucBranch" required placeholder="RUC de la Sucursal..." required value="{{$b->rucBranch}}">
+        <input type="text" class="form-control" name="rucBranch" required placeholder="RUC de la Sucursal..." required value="{{$b->rucBranch}}" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
         <label>Dirección de la Sucursal</label>
         <input type="text" class="form-control" name="addressBranch" required placeholder="Dirección de la Sucursal..." required value="{{$b->addressBranch}}">
         <label>Tipo de Cambio</label>
