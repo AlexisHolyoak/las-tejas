@@ -51,7 +51,7 @@
         <div class="form-group">
           <label for="number" class="col-md-4 control-label">Asignar mozo</label>
           <div class="col-md-6">
-            <select class="iduser form-control" name="idUser" id="iduser">
+            <select class="iduser form-control" name="idUser" id="iduser" disabled>
 
             </select>
           </div>
@@ -70,10 +70,8 @@
 $(document).ready(function(){
   $('#idbranch').on('change',function(e){
     var id=$(this).val(); var es=id!=0?false:true;
-    console.log(id);
     $('#iduser').prop('disabled',es);
-    if(!es){
-      console.log('prueba');
+    if(!es){      
       $.get('/ajax-users/'+id,function(data){
         $('#iduser').empty();
         $.each(data,function(index,o){
