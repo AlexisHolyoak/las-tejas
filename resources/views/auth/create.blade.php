@@ -11,17 +11,17 @@
                 {{ csrf_field() }}
                 <div class="form-group col-md-4" align="center">
                     <label for="nameUser">Nombre de Usuario</label>
-                    <input type="text" name="nameUser" class="form-control" placeholder="Nombre del Usuario..." value="{{old('nameUser')}}" max="50" id="only-letters">
+                    <input type="text" name="nameUser" class="form-control" placeholder="Nombre del Usuario..." value="{{old('nameUser')}}" max="50" onkeydown="return alphaOnly(event);">
                     <p class="label label-danger">{{$errors->first('nameUser')}}</p>
                 </div>
                 <div class="form-group col-md-4" align="center">
                     <label for="firstSurNameUser">Apellido Paterno</label>
-                    <input type="text" name="firstSurNameUser" class="form-control" placeholder="Apellido Paterno..." value="{{old('firstSurNameUser')}}" id="only-letters">
+                    <input type="text" name="firstSurNameUser" class="form-control" placeholder="Apellido Paterno..." value="{{old('firstSurNameUser')}}" onkeydown="return alphaOnly(event);">
                     <p class="label label-danger">{{$errors->first('firstSurNameUser')}}</p>
                 </div>
                 <div class="form-group col-md-4" align="center">
                     <label for="secondSurNameUser">Apellido Materno</label>
-                    <input type="text" name="secondSurNameUser" class="form-control" placeholder="Apellido Materno..." value="{{old('secondSurNameUser')}}" id="only-letters">
+                    <input type="text" name="secondSurNameUser" class="form-control" placeholder="Apellido Materno..." value="{{old('secondSurNameUser')}}" onkeydown="return alphaOnly(event);">
                     <p class="label label-danger">{{$errors->first('secondSurNameUser')}}</p>
                 </div>
                 <div class="form-group col-md-4" align="center">
@@ -70,7 +70,7 @@
                 </div>
                 <div class="form-group col-md-4" align="center">
                     <label for="nickNameUser">Usuario</label>
-                    <input type="text" name="nickNameUser" class="form-control" placeholder="Usuario..." value="{{old('nickNameUser')}}" id="only-letters">
+                    <input type="text" name="nickNameUser" class="form-control" placeholder="Usuario..." value="{{old('nickNameUser')}}" onkeydown="return alphaOnly(event);">
                     <p class="label label-danger">{{$errors->first('nickNameUser')}}</p>
                 </div>
                 <div class="form-group col-md-4" align="center">
@@ -141,12 +141,10 @@ $('#province').change(function(e){
         });
     });
 });
-function testInput(event) {
-   var value = String.fromCharCode(event.which);
-   var pattern = new RegExp(/[a-zåäö ]/i);
-   return pattern.test(value);
-}
-$('#only-letters').bind('keypress', testInput);
+function alphaOnly(event) {
+  var key = event.keyCode;`enter code here`
+  return ((key >= 65 && key <= 90) || key == 8);
+};
 </script>
 @endpush
 @stop
