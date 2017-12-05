@@ -19,13 +19,13 @@
         <div class="form-group">
           <label for="number" class="col-md-4 control-label">Numero de Mesa</label>
           <div class="col-md-6">
-              <input type="number" name="numberTable" value="" class="form-control">
+              <input type="number" name="numberTable" value="" class="form-control" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
           </div>
         </div>
         <div class="form-group">
           <label for="number" class="col-md-4 control-label">Numero de Sillas</label>
           <div class="col-md-6">
-              <input type="number" name="numberOfChairsTable" value="" class="form-control">
+              <input type="number" name="numberOfChairsTable" value="" class="form-control" max="15" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
           </div>
         </div>
         <div class="form-group">
@@ -71,7 +71,7 @@ $(document).ready(function(){
   $('#idbranch').on('change',function(e){
     var id=$(this).val(); var es=id!=0?false:true;
     $('#iduser').prop('disabled',es);
-    if(!es){      
+    if(!es){
       $.get('/ajax-users/'+id,function(data){
         $('#iduser').empty();
         $.each(data,function(index,o){

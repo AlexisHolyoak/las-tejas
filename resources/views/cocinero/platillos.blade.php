@@ -28,7 +28,9 @@
             <?php foreach ($dataView as $key => $value):?>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 product">
               <div class="contact-box center-version">
-                <img alt="image" class="img-circle" src="{{asset('files/productos/'.$value->imageDish)}}" style="height:150px;width:150px;">
+								<object type="image/png" data="http://stackoverflow.com/does-not-exist.png">
+									<img alt="image" class="img-circle" src="{{asset('files/productos/'.$value->imageDish)}}" style="height:150px;width:150px;">
+								</object>                
                 <h4><strong>{{ $value->nameDish }}</strong></h4>
                 <address>
                   <strong>Categoría: </strong>{{ $value->nameSubCategory }}<br>

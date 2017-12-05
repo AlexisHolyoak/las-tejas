@@ -41,8 +41,8 @@ class TableController extends Controller
     }
     public function store(Request $request){
       $this->validate($request,[
-          'numberTable' => 'required|integer|min:0',
-          'numberOfChairsTable' => 'required|integer|min:0',
+          'numberTable' => 'required|integer|min:0|max:10',
+          'numberOfChairsTable' => 'required|integer|min:0|max:15',
           'statusOfAttentionTable'=>'required',
           'idBranch'=> 'required',
           'idUser'=> 'required'

@@ -13,7 +13,7 @@
         <label>Tipo de Negocio</label>
         <input type="text" class="form-control" name="kindOfBussinessBranch" required placeholder="Tipo de Negocio..." required>
         <label>RUC de la Sucursal</label>
-        <input type="text" class="form-control" name="rucBranch" required placeholder="RUC de la Sucursal..." required>
+        <input type="text" class="form-control" name="rucBranch" required placeholder="RUC de la Sucursal..." required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
         <label>Dirección de la Sucursal</label>
         <input type="text" class="form-control" name="addressBranch" required placeholder="Dirección de la Sucursal..." required>
         <label>Tipo de Cambio</label>
